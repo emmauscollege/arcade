@@ -1,5 +1,5 @@
 # Preview website
-Start webserver on unix system with commmand:
+Start webserver on unix system without cache:
 ```
-npx http-server
+npx http-server -c-1
 ```

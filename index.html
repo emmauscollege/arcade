@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--- bewerkt voorbeeld van w3schools.org-->
+<!--- code derived from w3schools.org-->
 <html>
 
 <head>
@@ -8,10 +8,11 @@
 </head>
 
 <body>
-  
+
   <!-- keyboard control -->
+  <!--- code derived from chatgpt -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const links = document.querySelectorAll('.gallery a'); // Select all anchor tags within galleries
       let currentIndex = 0; // Start at the first link
 
@@ -21,7 +22,7 @@
       }
 
       // Event listener for keyboard navigation
-      document.addEventListener('keydown', function(event) {
+      document.addEventListener('keydown', function (event) {
         if (event.key === 'ArrowRight') {
           if (currentIndex < links.length - 1) { // Check if it's not the last link
             currentIndex++;
@@ -45,8 +46,8 @@
     <h1>Games van leerlingen</h1>
     <p>Op deze pagina staan voorbeelden van games die leerlingen van het Emmauscollege Rotterdam gemaakt hebben voor het
       vak informatica.</p>
-    <p>Deze webpagina is gemaakt voor onze arcadekast. Navigeer met de joysticks, bevestig met knoppen</p>
-    <p>Bekijk je website niet op onze arcadekast? Navigeer met wasd of pijltjes en bevestig met rtyfgh of uiojkl</p>
+    <p>Deze webpagina is gemaakt voor onze arcadekast. Navigeer met de joysticks, bevestig met knoppen.</p>
+    <p>Bekijk je website niet op onze arcadekast? Navigeer met wasd of pijltjes en bevestig met rtyfgh of uiojkl of enter.</p>
   </div>
 
   <!--- games header-->
@@ -57,22 +58,22 @@
     <div class="gallery">
       <a href="game_mario/">
         <img src="game_mario/screenshot.jpg">
+        <div class="desc">Super Mario Bros</div>
       </a>
-      <div class="desc">Super Mario Bros</div>
     </div>
 
     <div class="gallery">
       <a href="game_minecraft/">
         <img src="game_minecraft/screenshot.jpg">
+        <div class="desc">Minecraft</div>
       </a>
-      <div class="desc">Minecraft</div>
     </div>
 
     <div class="gallery">
       <a href="game_flappy/">
         <img src="game_flappy/screenshot.jpg">
+        <div class="desc">Flappy Star</div>
       </a>
-      <div class="desc">Flappy Star</div>
     </div>
 
     <!-- games 21/22 -->
@@ -94,22 +95,22 @@
     <div class="gallery">
       <a href="game_basketbal/">
         <img src="game_basketbal/screenshot.jpg">
+        <div class="desc">Basketbal</div>
       </a>
-      <div class="desc">Basketbal</div>
     </div>
 
     <div class="gallery">
       <a href="game_runner/">
         <img src="game_runner/screenshot.jpg">
+        <div class="desc">Runner</div>
       </a>
-      <div class="desc">Runner</div>
     </div>
 
     <div class="gallery">
       <a href="game_runpacmanrun/">
         <img src="game_runpacmanrun/screenshot.jpg">
+        <div class="desc">Run Pacman Run</div>
       </a>
-      <div class="desc">Run Pacman Run</div>
     </div>
 
     <!-- games 20/21 -->
@@ -117,36 +118,36 @@
     <div class="gallery">
       <a href="game_ghostCastle">
         <img src="game_ghostCastle/screenshot.jpg">
+        <div class="desc">Ghost Castle</div>
       </a>
-      <div class="desc">Ghost Castle</div>
     </div>
 
     <div class="gallery">
       <a href="game_caviaquest">
         <img src="game_caviaquest/screenshot.jpg">
+        <div class="desc">Cavia Quest</div>
       </a>
-      <div class="desc">Cavia Quest</div>
     </div>
 
     <div class="gallery">
       <a href="game_minigolf">
         <img src="game_minigolf/screenshot.jpg">
+        <div class="desc">Mini Golf</div>
       </a>
-      <div class="desc">Mini Golf</div>
     </div>
 
     <div class="gallery">
       <a href="game_candycrusher">
         <img src="game_candycrusher/screenshot.jpg">
+        <div class="desc">Candy Crusher</div>
       </a>
-      <div class="desc">Candy Crusher</div>
     </div>
 
     <div class="gallery">
       <a href="game_tetris">
         <img src="game_tetris/screenshot.jpg">
+        <div class="desc">Tetris</div>
       </a>
-      <div class="desc">Tetris</div>
     </div>
 
     <!-- games 18/19 -->
@@ -154,60 +155,60 @@
     <div class="gallery">
       <a href="game_box">
         <img src="game_box/screenshot.jpg">
+        <div class="desc">game box</div>
       </a>
-      <div class="desc">game box</div>
     </div>
 
     <div class="gallery">
       <a href="game_car">
         <img src="game_car/screenshot.jpg">
+        <div class="desc">game car drive</div>
       </a>
-      <div class="desc">game car drive</div>
     </div>
 
     <div class="gallery">
       <a href="game_platform">
         <img src="game_platform/screenshot.jpg">
+        <div class="desc">platform game</div>
       </a>
-      <div class="desc">platform game</div>
     </div>
 
     <div class="gallery">
       <a href="game_bricks">
         <img src="game_bricks/screenshot.jpg">
+        <div class="desc">break bricks</div>
       </a>
-      <div class="desc">break bricks</div>
     </div>
 
     <div class="gallery">
       <a href="game_adventure">
         <img src="game_adventure/screenshot.jpg">
+        <div class="desc">adventure seeker</div>
       </a>
-      <div class="desc">adventure seeker</div>
     </div>
 
     <div class="gallery">
       <a href="game_snakePremium">
         <img src="game_snakePremium/screenshot.jpg">
+        <div class="desc">snake Premium</div>
       </a>
-      <div class="desc">snake Premium</div>
     </div>
 
     <div class="gallery">
       <a href="game_snake3D">
         <img src="game_snake3D/screenshot.jpg">
+        <div class="desc">snake 3D</div>
       </a>
-      <div class="desc">snake 3D</div>
     </div>
 
     <div class="gallery">
       <a href="game_startcode/">
         <img src="game_startcode/screenshot.jpg">
+        <div class="desc">Eenvoudig voorbeeld</div>
       </a>
-      <div class="desc">Eenvoudig voorbeeld</div>
     </div>
 
-  <!--- games footer-->
+    <!--- games footer-->
   </div>
 
   <!-- page footer -->
