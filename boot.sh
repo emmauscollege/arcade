@@ -6,7 +6,7 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     echo "updating rapberry pi OS..."
     #not implemented yet
     echo "Updating games..."
-    update_games.sh
+    ./update_games.sh
 else
     echo "No internet. Using locally stored games..."
 fi
