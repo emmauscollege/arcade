@@ -18,5 +18,6 @@ echo "starting back to main menu deamon"
 # not implemented yet
 
 echo "starting webbrowser"
-chromium-browser --kiosk --app=https://localhost:8000/
-
+# chromium doesn't work (some bug it seems)
+# chromium-browser --kiosk --app=https://localhost:8000/
+firefox --kiosk https://localhost:8000/ &
