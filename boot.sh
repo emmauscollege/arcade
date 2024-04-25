@@ -11,6 +11,13 @@ else
     echo "No internet. Using locally stored games..."
 fi
 
+echo "starting webserver"
+# -c-1 = no cache
+npx http-server /home/arcade/emmaus-arcade-games-main/ -c-1
+
+echo "starting back to main menu deamon"
+# not implemented yet
+
 echo "starting webbrowser"
-chromium-browser --kiosk --app=file://home/arcade/emmaus-arcade-games-main/index.html
+chromium-browser --kiosk --app=https://localhost:8080/index.html
 
