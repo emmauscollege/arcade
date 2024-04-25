@@ -12,12 +12,11 @@ else
 fi
 
 echo "starting webserver"
-# -c-1 = no cache
-npx http-server /home/arcade/emmaus-arcade-games-main/ -c-1
+python -m http.server 8000 --directory /home/arcade/emmaus-arcade-games-main/ 
 
 echo "starting back to main menu deamon"
 # not implemented yet
 
 echo "starting webbrowser"
-chromium-browser --kiosk --app=https://localhost:8080/index.html
+chromium-browser --kiosk --app=https://localhost:8000/
 
