@@ -29,5 +29,4 @@ kill $(ps aux | grep 'firefox' |grep -v 'grep'| awk '{print $2}')
 echo "Starting webbrowser"
 # chromium doesn't work (some bug it seems)
 # chromium-browser --kiosk --app=https://localhost:8000/
-# firefox --kiosk https://localhost:8000/ &
-firefox http://localhost:8000/ &
+firefox --kiosk http://localhost:8000/ &
