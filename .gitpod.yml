@@ -3,11 +3,11 @@
 # image: <your-workspace-image>
 # Command to start on workspace startup (optional)
 tasks:
-  - command: python3 -m http.server 8080
+  - command: python3 -m http.server 8000 -d web
     name: webserver
   - command: >
     name: terminal
 # Ports to expose on workspace startup (optional)
 ports:
-  - port: 3000
+  - port: 8000
     onOpen: notify
