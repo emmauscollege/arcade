@@ -8,12 +8,12 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     sudo apt install wget unzip
     echo "Updating arcade..."
     wget https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip
-    unzip ~/Downloads/arcade.zip
+    unzip ~/Downloads/arcade.zip -d ~/Downloads/ -o
     rm -rf ~Downloads/arcade.zip
     rm -rf ~/web
-    mv -f ~/Downloads/arcade-main/web ~/web
+    mv ~/Downloads/arcade-main/web ~/web
     rm -rf ~/bin
-    mv -f ~/Downloads/arcade-main/web ~/bin
+    mv ~/Downloads/arcade-main/bin ~/bin
     cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
     rm -rf ~/Downloads/arcade-main
 else
