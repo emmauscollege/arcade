@@ -11,9 +11,9 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     unzip ~/Downloads/arcade.zip
     rm -rf ~Downloads/arcade.zip
     rm -rf ~/web
-    mv -r ~/Downloads/arcade-main/web ~/web
+    mv -f ~/Downloads/arcade-main/web ~/web
     rm -rf ~/bin
-    mv -r ~/Downloads/arcade-main/web ~/bin
+    mv -f ~/Downloads/arcade-main/web ~/bin
     cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
     rm -rf ~/Downloads/arcade-main
 else
