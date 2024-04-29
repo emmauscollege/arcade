@@ -14,6 +14,8 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     mv ~/Downloads/arcade-main/web ~/web
     rm -rf ~/bin
     mv ~/Downloads/arcade-main/bin ~/bin
+    # copy files needed for auto-update, if it fails we still have to old version
+    cp ~/Downloads/arcade-main/.config/autostart/arcade.desktop ~/.config/autostart/
     cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
     rm -rf ~/Downloads/arcade-main
 else

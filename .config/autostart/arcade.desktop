@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Arcade
+Exec=/home/arcade/arcade-install.sh

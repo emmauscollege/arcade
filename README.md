@@ -9,6 +9,3 @@
     - use `nano arcade-install.sh` and copy-paste the file contents
 2. `chmod +x arcade-install.sh` to make the file executable
 3. `./arcade-install.sh` to install the arcade
-4. use cron to start automatically after each reboot of the arcade
-    - `crontab -e` to start editing
-    - add line `@reboot /home/arcade/arcade-install.sh`
