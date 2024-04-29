@@ -1,6 +1,7 @@
 /* page */
-body {
-  font-family: sans-serif
+html, body {
+  font-family: sans-serif;
+  scroll-behavior: smooth;
 }
 
 /* top */
@@ -29,15 +30,15 @@ div.gallery a {
   display:block;
   border: 10px solid white;
   transition-duration: 0.5s;
-  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50); 
 }
 
-div.gallery a:hover, div.gallery a:focus{
+div.gallery a:focus{
   display:block;
   outline: none;
   border: 10px solid rgb(141, 136, 136);
   transform: scale(0.98); 
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.50);
 }
 
 div.gallery img, div.gallery iframe {
