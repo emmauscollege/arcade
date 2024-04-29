@@ -13,6 +13,7 @@ def run_script():
     subprocess.run(['~/bin/arcade-start.sh'])
 
 def on_press(key):
+    global esc_pressed_time  
     try:
         print('alphanumeric key {0} pressed'.format(key.char))
     except AttributeError:
@@ -23,6 +24,7 @@ def on_press(key):
             esc_pressed_time = time.time()
 
 def on_release(key):
+    global esc_pressed_time 
     print('{0} released'.format(key))
     if key == keyboard.Key.esc and esc_pressed_time is not None:
         # Calculate how long the key was held
