@@ -8,6 +8,7 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     sudo apt -q update
     sudo apt -q install wget unzip
     sudo apt -yq install python3-pynput
+    sudo apt -yq install python3-evdev
 
     echo "Updating arcade..."
     wget https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip
