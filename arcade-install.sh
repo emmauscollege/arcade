@@ -5,9 +5,9 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     echo "Internet is connected."
 
     echo "Updating rapberry pi OS..."
-    sudo apt update
-    sudo apt install wget unzip
-    sudo apt install python3-pynput
+    sudo apt -q update
+    sudo apt -q install wget unzip
+    sudo apt -yq install python3-pynput
 
     echo "Updating arcade..."
     wget https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip
