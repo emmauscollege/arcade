@@ -20,7 +20,7 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     # copy files needed for auto-update, if it fails we still have to old version
     mkdir -p ~/.config/autostart/
     cp ~/Downloads/arcade-main/.config/autostart/arcade.desktop ~/.config/autostart/
-    cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh.latest
+    cp ~/Downloads/arcade-install.sh ~/arcade-install.sh.backup
     cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
     # rm -rf ~/Downloads/arcade-main
 else
