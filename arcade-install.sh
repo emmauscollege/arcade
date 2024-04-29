@@ -11,7 +11,7 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
 
     echo "Updating arcade..."
     wget https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip
-    unzip -o ~/Downloads/arcade.zip -o ~/Downloads/
+    unzip -o ~/Downloads/arcade.zip -d ~/Downloads/
     rm -rf ~Downloads/arcade.zip
     rm -rf ~/web
     mv ~/Downloads/arcade-main/web ~/web
@@ -21,7 +21,8 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     mkdir -p ~/.config/autostart/
     cp ~/Downloads/arcade-main/.config/autostart/arcade.desktop ~/.config/autostart/
     cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh.latest
-    rm -rf ~/Downloads/arcade-main
+    cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
+    # rm -rf ~/Downloads/arcade-main
 else
     echo "No internet. Continue without update..."
 fi
