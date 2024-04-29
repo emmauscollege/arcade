@@ -39,4 +39,6 @@ listener = keyboard.Listener(
     on_release=on_release)
 listener.start()
 
+print('Hotkey is listening')
+
 pause()  # Wait for events
