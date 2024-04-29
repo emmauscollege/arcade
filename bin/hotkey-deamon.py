@@ -1,46 +1,38 @@
-# restart arcade when a certain key is hold down for more than a certain number of seconds
-# more info at https://pypi.org/project/pynput/
-
-from pynput import keyboard
-from signal import pause
 import subprocess
-import time
-
-esc_pressed_time = None
+from evdev import InputDevice, categorize, ecodes, list_devices
 
 def run_script():
-    print("Button held for 5 seconds, running ~/bin/arcade-start.sh")
-    subprocess.run(['~/bin/arcade-start.sh'])
+    print("A key pressed - running script...")
+    # Replace '/path/to/your_script.sh' with the actual path to your script
+    subprocess.run(['/home/arcade/bin/arcade-start.sh'])
 
-def on_press(key):
-    global esc_pressed_time  
+def listen_for_a_key(device):
+    for event in device.read_loop():
+        if event.type == ecodes.EV_KEY:
+            key_event = categorize(event)
+            if key_event.keystate == key_event.key_down:
+                if key_event.keycode == 'KEY_A':
+                    run_script()
+
+def is_keyboard(device):
     try:
-        print('alphanumeric key {0} pressed'.format(key.char))
-    except AttributeError:
-        print('special key {0} pressed'.format(key))
-    if key == keyboard.Key.esc:
-        if esc_pressed_time is None:
-            # Record the time when ESC key is first pressed
-            esc_pressed_time = time.time()
+        capabilities = device.capabilities()
+        # Check if the device has keys (this covers typical keyboards)
+        return ecodes.EV_KEY in capabilities
+    except IOError:
+        # Device could not be accessed or does not support capabilities
+        return False
 
-def on_release(key):
-    global esc_pressed_time 
-    print('{0} released'.format(key))
-    if key == keyboard.Key.esc and esc_pressed_time is not None:
-        # Calculate how long the key was held
-        held_time = time.time() - esc_pressed_time
-        esc_pressed_time = None
-        if held_time >= 3:
-            # Trigger the action if the key was held for 3 or more seconds
-            run_script()
+def main():
+    devices = [InputDevice(path) for path in list_devices()]
+    keyboards = [device for device in devices if is_keyboard(device)]
 
+    for keyboard in keyboards:
+        print(f"Listening on {keyboard.name}")
+        # Use threading to listen on multiple keyboards
+        from threading import Thread
+        thread = Thread(target=listen_for_a_key, args=(keyboard,))
+        thread.start()
 
-# listen in a non-blocking fashion:
-listener = keyboard.Listener(
-    on_press=on_press,
-    on_release=on_release)
-listener.start()
-
-print('Hotkey is listening')
-
-pause()  # Wait for events
+if __name__ == "__main__":
+    main()

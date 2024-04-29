@@ -4,7 +4,7 @@ from evdev import InputDevice, categorize, ecodes, list_devices
 def run_script():
     print("A key pressed - running script...")
     # Replace '/path/to/your_script.sh' with the actual path to your script
-    subprocess.run(['/path/to/your_script.sh'])
+    subprocess.run(['/home/arcade/bin/arcade-start.sh'])
 
 def listen_for_a_key(device):
     for event in device.read_loop():
