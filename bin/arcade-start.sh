@@ -21,7 +21,7 @@ kill $(ps aux | grep 'hotkey-deamon.py' |grep -v 'grep'| awk '{print $2}')
 
 
 echo "Starting hotkey deamon"
-python ~/bin/hotkey-deamon.py
+python ~/bin/hotkey-deamon.py &
 
 echo "Stopping webbrowser if it was running"
 kill $(ps aux | grep 'firefox' |grep -v 'grep'| awk '{print $2}')
