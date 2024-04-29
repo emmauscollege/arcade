@@ -8,16 +8,17 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
     sudo apt update
     sudo apt install wget unzip
     pip3 install pynput
-    
+
     echo "Updating arcade..."
     wget https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip
-    unzip ~/Downloads/arcade.zip -d ~/Downloads/ -o
+    unzip ~/Downloads/arcade.zip -o -d ~/Downloads/
     rm -rf ~Downloads/arcade.zip
     rm -rf ~/web
     mv ~/Downloads/arcade-main/web ~/web
     rm -rf ~/bin
     mv ~/Downloads/arcade-main/bin ~/bin
     # copy files needed for auto-update, if it fails we still have to old version
+    mkdir -p ~/.config/autostart/
     cp ~/Downloads/arcade-main/.config/autostart/arcade.desktop ~/.config/autostart/
     cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
     rm -rf ~/Downloads/arcade-main
