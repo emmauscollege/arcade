@@ -23,17 +23,27 @@ div.container {
 div.gallery {
   margin: 5px;
   border: 1px solid #ccc;
-  width: 300px;
-  height: 188px;
 }
 
-div.gallery:hover {
-  border: 1px solid #777;
+div.gallery a {
+  display:block;
+  border: 10px solid white;
+  transition-duration: 0.5s;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24); 
+}
+
+div.gallery a:hover, div.gallery a:focus{
+  display:block;
+  outline: none;
+  border: 10px solid rgb(141, 136, 136);
+  transform: scale(0.98); 
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
 }
 
 div.gallery img, div.gallery iframe {
-  width: 100%;
-  height: 75%;
+  display:block;
+  width: 300px;
+  height: 188px;
 }
 
 div.desc {
