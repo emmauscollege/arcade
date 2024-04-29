@@ -1,8 +1,12 @@
+# Restart arcade when escape-key is pressed
+# Code taken from chatgpt
+# https://chat.openai.com/share/a2460b8d-08f8-4580-bb59-adf84836ab3c
+
 import subprocess
 from evdev import InputDevice, categorize, ecodes, list_devices
 
 def run_script():
-    print("A key pressed - running script...")
+    print("ESC key pressed - running script...")
     # Replace '/path/to/your_script.sh' with the actual path to your script
     subprocess.run(['/home/arcade/bin/arcade-start.sh'])
 
@@ -11,7 +15,7 @@ def listen_for_a_key(device):
         if event.type == ecodes.EV_KEY:
             key_event = categorize(event)
             if key_event.keystate == key_event.key_down:
-                if key_event.keycode == 'KEY_A':
+                if key_event.keycode == 'KEY_ESC':
                     run_script()
 
 def is_keyboard(device):
