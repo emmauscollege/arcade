@@ -52,3 +52,9 @@ div.desc {
   text-align: center;
 }
 
+.top-banner {
+  display: block;
+  margin: auto;
+  padding: 10px;
+  width:100%;
+}
