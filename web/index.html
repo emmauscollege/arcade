@@ -13,12 +13,12 @@
   <!--- code derived from chatgpt -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const links = document.querySelectorAll('.gallery a'); // Select all anchor tags within galleries
-      let currentIndex = 0; // Start at the first link
+      const links = document.querySelectorAll('a'); // Select all anchor tags
+      let currentIndex = 0; // Start at the first anchor
 
       // Function to manage moving the focus
       function moveFocus(index) {
-        links[index].focus(); // Set focus to the link at 'index'
+          links[index].focus(); // Set focus to the link at 'index'
       }
 
       // Event listener for keyboard navigation
@@ -36,16 +36,18 @@
         }
       });
 
-      // Initially focus the first link
+      // Initially focus to the top
       moveFocus(0);
     });
   </script>
 
   <!--- page intro -->
   <div class="top">
+    <a href="/">
     <div class="top-banner">
       <img src="img/banner-asciiart.png">
     </div>
+    </a>
     <h1>Maken</h1>
     <p>Wil jij jouw game op deze arcadekast?<br>
       Kies informatica op het Emmauscollege.<br> 
@@ -54,6 +56,12 @@
     </p>
       
       <h1>Spelen</h1>
+      <p>
+        Selecteer je game met links/rechts.<br>
+        Start je game met enter.<br>
+        Ga terug naar dit menu met de linker witte knop.
+      </p>
+
       <img src="img/controls.png" width="50%">
 
   </div>

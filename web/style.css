@@ -12,9 +12,15 @@ html, body {
   background-color: var(--color-bg);
   color: var(--color-fg);
   font-size:xx-large;
+  
 }
 
 /* top */
+
+div.top a:focus{
+  outline: none;
+}
+
 div.top {
   display:block;
   width: 90%;
@@ -72,7 +78,7 @@ div.gallery img, div.gallery iframe {
   height: 188px;
 }
 
-div.desc {
+div.gallery .desc {
   padding: 15px;
   text-align: center;
 }
