@@ -1,4 +1,4 @@
-# Restart arcade when escape-key is pressed
+# Restart arcade when F1-key is pressed
 # Code taken from chatgpt
 # https://chat.openai.com/share/a2460b8d-08f8-4580-bb59-adf84836ab3c
 
@@ -15,7 +15,7 @@ def listen_for_a_key(device):
         if event.type == ecodes.EV_KEY:
             key_event = categorize(event)
             if key_event.keystate == key_event.key_down:
-                if key_event.keycode == 'KEY_ESC':
+                if key_event.keycode == 'KEY_F1':
                     run_script()
 
 def is_keyboard(device):
