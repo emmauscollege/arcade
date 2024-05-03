@@ -28,6 +28,10 @@ else
     echo "No internet. Continue without update..."
 fi
 
+echo "Clearing browser cache"
+rm -rf ~/.cache/chromium
+rm -rf ~/.cache/mozilla
+
 echo "Starting arcade..."
 ~/bin/arcade-start.sh
 
