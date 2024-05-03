@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # remove mouse cursor after 1 second
-unclutter -idle 1 &
+unclutter -idle 1 -root &
 
 # echo "Stopping webserver if it was running"
 # kill $(ps aux | grep 'http.server' |grep -v 'grep'| awk '{print $2}')

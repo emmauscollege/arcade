@@ -12,5 +12,5 @@ kill $(ps aux | grep 'chromium-browser' |grep -v 'grep'| awk '{print $2}')
 
 echo "Starting webbrowser"
 # firefox --kiosk http://localhost:8000/ &
-chromium-browser --app=http://localhost:8000/ --start-fullscreen &
+chromium-browser --kiosk http://localhost:8000/ &
 
