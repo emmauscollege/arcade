@@ -4,13 +4,23 @@
   src: url("fonts/VT323-Regular.ttf") format("truetype");
 }
 
+/* Hide scrollbar */
+body::-webkit-scrollbar {
+  display: none;
+}
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 html, body {
   --color-fg : #000F41; /* Emmaus dark-blue */
   --color-bg : #EE811B; /* Emmaus orange */
   font-family: VT323;
   scroll-behavior: smooth;
   background-color: var(--color-bg);
-  color: var(--color-fg);  
+  color: var(--color-fg);
+  margin: 0px;
 }
 
 /* top */
