@@ -5,6 +5,7 @@ html, body {
   font-family: sans-serif;
   scroll-behavior: smooth;
   background-color: var(--color-bg);
+  color: var(--color-fg);
 }
 
 /* top */
@@ -13,6 +14,21 @@ div.top {
   width: 90%;
   margin:auto;
   text-align: center;
+}
+
+div.top-banner img {
+  display: block;
+  margin: auto;
+  width:100%;
+  animation: glow 1s infinite alternate;
+}
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 1rem white);
+  }
+  to {
+    filter: drop-shadow(0 0 0rem white);
+  }
 }
 
 /* image gallery
@@ -53,11 +69,4 @@ div.gallery img, div.gallery iframe {
 div.desc {
   padding: 15px;
   text-align: center;
-}
-
-.top-banner {
-  display: block;
-  margin: auto;
-  padding: 10px;
-  width:100%;
 }
