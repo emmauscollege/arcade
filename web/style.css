@@ -1,7 +1,10 @@
 /* page */
 html, body {
+  --color-fg : #000F41; /* Emmaus dark-blue */
+  --color-bg : #EE811B; /* Emmaus orange */
   font-family: sans-serif;
   scroll-behavior: smooth;
+  background-color: var(--color-bg);
 }
 
 /* top */
@@ -36,7 +39,7 @@ div.gallery a {
 div.gallery a:focus{
   display:block;
   outline: none;
-  border: 10px solid rgb(141, 136, 136);
+  border: 10px solid var(--color-fg);
   transform: scale(0.98); 
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.50);
 }
