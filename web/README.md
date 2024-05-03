@@ -9,3 +9,6 @@
 - make background transparant in some tool, for example https://onlinepngtools.com/create-transparent-png#tool
 
 ## create control image
+- https://excalidraw.com/
+- upload `controls.excalidraw`
+- export image to `banner.png`

@@ -6,6 +6,7 @@ html, body {
   scroll-behavior: smooth;
   background-color: var(--color-bg);
   color: var(--color-fg);
+  font-size:xx-large;
 }
 
 /* top */
