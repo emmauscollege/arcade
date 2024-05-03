@@ -13,8 +13,8 @@
   <!--- code derived from chatgpt -->
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const links = document.querySelectorAll('.gallery a'); // Select all anchor tags within galleries
-      let currentIndex = 0; // Start at the first link
+      const links = document.querySelectorAll('a'); // Select all anchor tags
+      let currentIndex = 0; // Start at the first anchor
 
       // Function to manage moving the focus
       function moveFocus(index) {
@@ -36,20 +36,34 @@
         }
       });
 
-      // Initially focus the first link
+      // Initially focus to the top
       moveFocus(0);
     });
   </script>
 
   <!--- page intro -->
   <div class="top">
-    <img class="top-banner" src="emmaus_arcade_1line.png">
-    <h1>Games van leerlingen</h1>
-    <p>This page is updated when the pi in the arcade is connected to internet during power on</p>
-    <p>Op deze pagina staan voorbeelden van games die leerlingen van het Emmauscollege Rotterdam gemaakt hebben voor het
-      vak informatica.</p>
-    <p>Deze webpagina is gemaakt voor onze arcadekast. Navigeer met de joysticks, bevestig met knoppen.</p>
-    <p>Bekijk je website niet op onze arcadekast? Navigeer met wasd of pijltjes en bevestig met rtyfgh of uiojkl of enter.</p>
+    <a href="/">
+      <div class="top-banner">
+        <img src="img/banner-asciiart.png">
+      </div>
+    </a>
+    <h1>Games maken</h1>
+    <p>Wil jij jouw game op deze arcadekast?<br>
+      Kies informatica op het Emmauscollege.<br>
+      In de 4e klas van de havo en het vwo programmeren leerlingen een game in javascript. <br>
+      Ben je trots op je game? Dan mag hij op deze arcadekast!
+    </p>
+
+    <h1>Games spelen</h1>
+    <p>
+      Selecteer je game met links/rechts.<br>
+      Start je game met enter.<br>
+      Ga terug naar dit menu met de linker witte knop.
+    </p>
+
+    <img src="img/controls.png" width="50%">
+
   </div>
 
   <!--- games header-->
@@ -214,9 +228,19 @@
   </div>
 
   <!-- page footer -->
-  <div class="top">
+  <div class="bottom">
     <hr>
-    <p>Emmauscollege Rotterdam</p>
+    <table>
+      <tr>
+      <td>
+        Meer informatie over het vak informatica op het Emmauscollege<br>
+        https://informatica.emmauscollege.nl/
+      </td>
+      <td> Meer informatie over deze arcadekast<br>
+        https://github.com/emmauscollege/arcade
+      </td>
+    </tr>
+    </table>
   </div>
 
 </body>
