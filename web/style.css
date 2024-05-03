@@ -1,4 +1,4 @@
-/* page */
+/* document */
 @font-face{
   font-family: "VT323";
   src: url("fonts/VT323-Regular.ttf") format("truetype");
@@ -10,12 +10,14 @@ html, body {
   font-family: VT323;
   scroll-behavior: smooth;
   background-color: var(--color-bg);
-  color: var(--color-fg);
-  font-size:xx-large;
-  
+  color: var(--color-fg);  
 }
 
 /* top */
+
+div.top {
+font-size:xx-large;
+}
 
 div.top a:focus{
   outline: none;
@@ -46,7 +48,9 @@ div.top-banner img {
 /* image gallery
    modified example taken from w3school.org
  */
+
 div.container {
+  font-size: xx-large;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -82,3 +86,14 @@ div.gallery .desc {
   padding: 15px;
   text-align: center;
 }
+
+/* bottom */
+
+div.bottom {
+  font-size: small;
+ }
+  
+ div.bottom table {
+  width:100%;
+  
+ }
