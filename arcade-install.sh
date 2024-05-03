@@ -28,9 +28,6 @@ else
     echo "No internet. Continue without update..."
 fi
 
-# set desktop wallpaper
-# not implemented, do it manually through the GUI
-
 echo "Starting arcade..."
 ~/bin/arcade-start.sh
 
