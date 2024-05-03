@@ -1,8 +1,13 @@
 /* page */
+@font-face{
+  font-family: "VT323";
+  src: url("fonts/VT323-Regular.ttf") format("truetype");
+}
+
 html, body {
   --color-fg : #000F41; /* Emmaus dark-blue */
   --color-bg : #EE811B; /* Emmaus orange */
-  font-family: sans-serif;
+  font-family: VT323;
   scroll-behavior: smooth;
   background-color: var(--color-bg);
   color: var(--color-fg);
