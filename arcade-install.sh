@@ -6,7 +6,7 @@ if ping -c 1 8.8.8.8 &> /dev/null; then
 
     echo "Updating rapberry pi OS..."
     sudo apt -q update
-    sudo apt -q install wget unzip
+    sudo apt -q install wget unzip unclutter
     sudo apt -yq install python3-pynput
     sudo apt -yq install python3-evdev
 
