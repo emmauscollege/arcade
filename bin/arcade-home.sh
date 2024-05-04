@@ -16,5 +16,5 @@ echo "Starting webbrowser"
 #chromium-browser --noerrdialogs --disable-infobars --kiosk http://localhost:8000/  &
 #next line opens links in same kiosk
 #chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://reelyactive.github.io/diy/pi-kiosk/
-chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 http://localhost:8000/
+chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://informatica.emmauscollege.nl/
 
