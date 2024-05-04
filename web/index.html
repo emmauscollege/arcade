@@ -9,38 +9,6 @@
 
 <body>
 
-  <!-- keyboard control -->
-  <!--- code derived from chatgpt -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const links = document.querySelectorAll('a'); // Select all anchor tags
-      let currentIndex = 0; // Start at the first anchor
-
-      // Function to manage moving the focus
-      function moveFocus(index) {
-        links[index].focus(); // Set focus to the link at 'index'
-      }
-
-      // Event listener for keyboard navigation
-      document.addEventListener('keydown', function (event) {
-        if (event.key === 'ArrowRight') {
-          if (currentIndex < links.length - 1) { // Check if it's not the last link
-            currentIndex++;
-            moveFocus(currentIndex);
-          }
-        } else if (event.key === 'ArrowLeft') {
-          if (currentIndex > 0) { // Check if it's not the first link
-            currentIndex--;
-            moveFocus(currentIndex);
-          }
-        }
-      });
-
-      // Initially focus to the top
-      moveFocus(0);
-    });
-  </script>
-
   <!--- page intro -->
   <div class="top">
     <a href="/">
@@ -232,16 +200,48 @@
     <hr>
     <table>
       <tr>
-      <td>
-        Meer informatie over het vak informatica op het Emmauscollege<br>
-        https://informatica.emmauscollege.nl/
-      </td>
-      <td> Meer informatie over deze arcadekast<br>
-        https://github.com/emmauscollege/arcade
-      </td>
-    </tr>
+        <td>
+          Meer informatie over het vak informatica op het Emmauscollege<br>
+          https://informatica.emmauscollege.nl/
+        </td>
+        <td> Meer informatie over deze arcadekast<br>
+          https://github.com/emmauscollege/arcade
+        </td>
+      </tr>
     </table>
   </div>
+
+  <!-- keyboard control -->
+  <!--- code derived from chatgpt -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('a'); // Select all anchor tags
+      let currentIndex = 0; // Start at the first anchor
+
+      // Function to manage moving the focus
+      function moveFocus(index) {
+        links[index].focus(); // Set focus to the link at 'index'
+      }
+
+      // Event listener for keyboard navigation
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowRight') {
+          if (currentIndex < links.length - 1) { // Check if it's not the last link
+            currentIndex++;
+            moveFocus(currentIndex);
+          }
+        } else if (event.key === 'ArrowLeft') {
+          if (currentIndex > 0) { // Check if it's not the first link
+            currentIndex--;
+            moveFocus(currentIndex);
+          }
+        }
+      });
+
+      // Initially focus to the top
+      moveFocus(0);
+    });
+  </script>
 
 </body>
 
