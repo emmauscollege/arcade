@@ -13,10 +13,12 @@ kill $(ps aux | grep 'chromium-browser' |grep -v 'grep'| awk '{print $2}')
 echo "Starting webbrowser"
 #firefox --kiosk http://localhost:8000/ &
 #next line opens links in small window, i don't know why, it is not what i want.
-chromium-browser --noerrdialogs --disable-infobars --kiosk http://localhost:8000/  &
+#chromium-browser --noerrdialogs --disable-infobars --kiosk http://localhost:8000/  &
 #next line opens links in same kiosk
 #chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://reelyactive.github.io/diy/pi-kiosk/
 #next line opens links in same kiosk
 #chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://informatica.emmauscollege.nl/
+#next line opens links in small window, i don't know why, it is not what i want.
+chromium-browser --display=:0 --kiosk --incognito --window-position=0,0  http://localhost:8000/
 #
 # it seems like the cause of the problem is something in the way that games are started from the index.html menu of the arcade
