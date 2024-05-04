@@ -1,12 +1,14 @@
 /* document */
-@font-face{
+@font-face {
   font-family: "VT323";
   src: url("fonts/VT323-Regular.ttf") format("truetype");
 }
 
 html {
-  --color-fg : #000F41; /* Emmaus dark-blue */
-  --color-bg : #EE811B; /* Emmaus orange */
+  --color-fg: #000F41;
+  /* Emmaus dark-blue */
+  --color-bg: #EE811B;
+  /* Emmaus orange */
   background-color: var(--color-bg);
   color: var(--color-fg);
   font-family: VT323;
@@ -16,47 +18,54 @@ html {
 
 /* Hide scrollbar */
 html::-webkit-scrollbar {
-  display: none; /* Chrome, Safari and Opera */
+  display: none;
+  /* Chrome, Safari and Opera */
 }
+
 html {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 body {
   margin: 10px;
-} 
+}
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: inherit;
 }
-/* top */
-
-div.top {
-font-size:xx-large;
-}
-
-div.top a:focus{
+a:focus {
   outline: none;
 }
 
-div.top {
-  display:block;
+/* top */
+
+.top {
+  font-size: xx-large;
+}
+
+.top {
+  display: block;
   width: 90%;
-  margin:auto;
+  margin: auto;
   text-align: center;
 }
 
-div.top-banner img {
+.top-banner img {
   display: block;
   margin: auto;
-  width:100%;
+  width: 100%;
   animation: glow 1s infinite alternate;
 }
+
 @keyframes glow {
   from {
     filter: drop-shadow(0 0 1rem white);
   }
+
   to {
     filter: drop-shadow(0 0 0rem white);
   }
@@ -66,56 +75,54 @@ div.top-banner img {
    modified example taken from w3school.org
  */
 
-div.container {
+.gallery-container {
   font-size: xx-large;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-div.gallery {
+.gallery-item {
   margin: 5px;
   box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
   background-color: var(--color-fg);
 }
 
-div.gallery a {
-  display:block;
-  outline: none; /* no rectangle around it when focussed */
-  width:300px;
-  height:250px;
+.gallery-item a{
+  display: block;
+  width: 300px;
+  height: 250px;
   transform: scale(1);
-  box-shadow: 3px 2px 50px 1px rgba(255, 0, 0, 0.90) outset;
+  filter: brightness(0.7);
   transition: all 0.3s;
-  filter:brightness(0.7);
 }
 
-div.gallery a:focus{
+.gallery-item a:focus {
   transform: scale(0.95);
-  box-shadow: 3px 2px 50px 1px rgba(0, 255, 0, 0.90) outset;
-  filter:brightness(1);
+  filter: brightness(1);
 }
 
-div.gallery img, div.gallery iframe {
-  display:block;
+.gallery-item-img {
+  display: block;
   width: 100%;
   aspect-ratio: 16 /9;
 }
 
-div.gallery .desc {
+.gallery-item-desc {
   width: 100%;
-  height: 81.25px; /* 250 - 300 / (16/9) = 81.25; this value shouldn't be hard coded */
+  height: 81.25px;
+  /* 250 - 300 / (16/9) = 81.25; this value shouldn't be hard coded */
   text-align: center;
   background-color: var(--color-bg);
 }
 
 /* bottom */
 
-div.bottom {
+.bottom {
   font-size: small;
- }
-  
- div.bottom table {
-  width:100%;
-  
- }
+}
+
+.bottom table {
+  width: 100%;
+
+}
