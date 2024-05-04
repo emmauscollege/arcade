@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Stopping webbrowser if it was running"
-kill $(ps aux | grep 'firefox' |grep -v 'grep'| awk '{print $2}')
-#kill $(ps aux | grep 'chromium-browser' |grep -v 'grep'| awk '{print $2}')
+#kill $(ps aux | grep 'firefox' |grep -v 'grep'| awk '{print $2}')
+kill $(ps aux | grep 'chromium-browser' |grep -v 'grep'| awk '{print $2}')
 # Details on the workings of previous command are as follows:
 # The ps gives you the list of all the processes.
 # The grep filters that based on your search string, grep -v returns all lines except the one(s) matched
@@ -11,6 +11,6 @@ kill $(ps aux | grep 'firefox' |grep -v 'grep'| awk '{print $2}')
 
 
 echo "Starting webbrowser"
-firefox --kiosk http://localhost:8000/ &
-# chromium-browser --kiosk --app --start-fullsceen --suppress-message-center-popups --ingocnito http://localhost:8000/  &
+#firefox --kiosk http://localhost:8000/ &
+chromium-browser --kiosk --suppress-message-center-popups --ingocnito http://localhost:8000/  &
 
