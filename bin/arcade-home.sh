@@ -12,16 +12,4 @@ kill $(ps aux | grep 'chromium-browser' |grep -v 'grep'| awk '{print $2}')
 
 echo "Starting webbrowser"
 #firefox --kiosk http://localhost:8000/ &
-#next line opens links in small window, i don't know why, it is not what i want.
-#chromium-browser --noerrdialogs --disable-infobars --kiosk http://localhost:8000/  &
-#next line opens links in same kiosk
-#chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://reelyactive.github.io/diy/pi-kiosk/
-#next line opens links in same kiosk
-#chromium-browser --display=:0 --kiosk --incognito --window-position=0,0 https://informatica.emmauscollege.nl/
-#next line opens links in small window, i don't know why, it is not what i want.
-chromium-browser --display=:0 --kiosk --incognito --window-position=0,0  http://localhost:8000/
-#
-# it seems like the cause of the problem is something in the way that games are started from the index.html menu of the arcade
-# aha found it: when using enter to go to the link, it opens in a new window. mouseclicking doesn't
-# AHAHAHA: FOUND BUG: de drukknop om een spel te starten is shift en enter. Met shift/enter start je iets in een nieuw window.
-# fix nog niet bedacht, maar dat komt wel (control mapping aanpassen kan, maar heeft vrij veel impact)
+chromium-browser --noerrdialogs --disable-infobars --display=:0 --window-position=0,0 --incognito --kiosk http://localhost:8000/
