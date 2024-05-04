@@ -5,6 +5,8 @@
 tasks:
   - command: python3 -m http.server 8000 -d web
     name: webserver
+  - command: npx -y http-server -c-1 -p 8080 web
+    name: webserver-nocache
   - command: >
     name: terminal
 # Ports to expose on workspace startup (optional)
