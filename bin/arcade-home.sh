@@ -22,3 +22,6 @@ echo "Starting webbrowser"
 chromium-browser --display=:0 --kiosk --incognito --window-position=0,0  http://localhost:8000/
 #
 # it seems like the cause of the problem is something in the way that games are started from the index.html menu of the arcade
+# aha found it: when using enter to go to the link, it opens in a new window. mouseclicking doesn't
+# AHAHAHA: FOUND BUG: de drukknop om een spel te starten is shift en enter. Met shift/enter start je iets in een nieuw window.
+# fix nog niet bedacht, maar dat komt wel (control mapping aanpassen kan, maar heeft vrij veel impact)
