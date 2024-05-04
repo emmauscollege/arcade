@@ -77,21 +77,23 @@ div.gallery {
 
 div.gallery a {
   display:block;
-  border: 10px solid white;
-  transition-duration: 0.5s;
+  /* border: 10px solid white; */
+  transition: box-shadow 0.5s, transform 0.5s;
   /*box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.50); */
-  box-shadow: rgba(247, 5, 5, 0.8) 5px 5px 55px inset;
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.90);
 }
 
 div.gallery a:focus{
   display:block;
   outline: none;
-  border: 10px solid var(--color-fg);
+  /* border: 10px solid var(--color-fg); */
   transform: scale(0.98); 
-  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.50);
+  /*box-shadow: inset 3px 2px 22px 1px rgba(0, 0, 0, 0.90);*/
+  box-shadow: 0
 }
 
 /* Right: shadow is applied on 'after' to the image directly */
+/*
 div.gallery > a > img {
   position: relative;
 }
@@ -101,7 +103,7 @@ div.gallery > a > img::after {
   inset: 0;
   box-shadow: inset 0 0 30px 30px rgba(246, 218, 33, 1);
   border: solid 50px red;
-}
+*/
 
 div.gallery img, div.gallery iframe {
   display:block;
