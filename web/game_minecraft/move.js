@@ -137,18 +137,18 @@ function getCameraChanges(){
 	changes.position[2] += BR_evenwijdig
 	
 	
-	if(c.keyIsDown(37)){
+	if(c.keyIsDown(74)){
         changes.orientation[0] -= sensitivity
 	}
-	if(c.keyIsDown(39)){
+	if(c.keyIsDown(76)){
         changes.orientation[0] += sensitivity
 	}
-	if(c.keyIsDown(40)){
+	if(c.keyIsDown(75)){
 		if(sensitivity + cameraPos.orientation[1] < 90){
             changes.orientation[1] += sensitivity
 		}
 	}
-	if(c.keyIsDown(38)){
+	if(c.keyIsDown(73)){
 		if(cameraPos.orientation[1] - sensitivity > -90){
             changes.orientation[1] -= sensitivity
 		}

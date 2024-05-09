@@ -96,12 +96,12 @@ new p5(function(c){
 		
 		c.text("Creative", c.width / 2 - 250, c.height / 2 + 100)
 		c.text("Challenge", c.width / 2 + 250, c.height / 2 + 100)
-		if(rectClicked(...creative)){
+		if(rectClicked(...creative) || c.keyIsDown(65)){ // A added for playing on Arcade
 			g.gameState = "guide"
 			g.gameMode = "creative"
 			set3DWorld();
 		}
-		if(rectClicked(...challenge)){
+		if(rectClicked(...challenge) || c.keyIsDown(68)){ // D added for playing on Arcade
 			g.gameState = "guide";
 			g.gameMode = "challenge"
 			g.level = 1;
@@ -135,17 +135,17 @@ new p5(function(c){
 		c.text("Unpause", c.width / 2 + 250, c.height / 2  + 150)
 		c.textAlign(c.LEFT)
 		//handle clicks:
-		if(rectClicked(...restartButton)){
+		if(rectClicked(...restartButton) || (c.keyIsDown(65) && c.keyIsDown(87))){ // AW added for playing on Arcade
 			//restart:
 			location.reload()
 		}
-		if(rectClicked(...explainButton)){
+		if(rectClicked(...explainButton) || (c.keyIsDown(68) && c.keyIsDown(87))){ // DW added for playing on Arcade
 			g.gameState = "guide"
 		}
-		if(rectClicked(...settingsButton)){
+		if(rectClicked(...settingsButton) || (c.keyIsDown(65) && c.keyIsDown(83))){ // AS added for playing on Arcade
 			g.gameState = "settings"
 		}
-		if(rectClicked(...unpauseButton)){
+		if(rectClicked(...unpauseButton) || (c.keyIsDown(68) && c.keyIsDown(83))){ // DS added for playing on Arcade
 			g.gameState = "playing"
 		}
 	}
@@ -157,8 +157,8 @@ new p5(function(c){
 		c.textAlign(c.CENTER, c.CENTER);
 		let understoodButton = [c.width / 2 - 200, c.height - 200, 400, 100];
 		let texts = [
-			"Walk with WASD, look around using the arrow keys. Jump with SPACE",
-			"You can select items from your inventory with the row of numbers, not with the Number Pad!",
+			"Walk with WASD, look around using IJKL. Jump with SPACE",
+			"You can select items from your inventory with the row of numbers or ZXCBNM, not with the Number Pad!",
 			"To dig a block, select the pickaxe and hold R. Every type of block has a different mining time.",
 			"To place a block, hit R once.",
 			"You can only use the mouse in paused menus.",
@@ -190,7 +190,7 @@ new p5(function(c){
 		c.textFont(pixelFont)
 		c.text("Got it!", c.width / 2, c.height - 150)
 		c.text("Guide", 0, 100, 1920, 300);
-		if(rectClicked(...understoodButton)){
+		if(rectClicked(...understoodButton) || c.keyIsDown(83)){ // S added for playing on Arcade
 			g.gameState = "playing"
 		}
 		c.textAlign(c.LEFT)
@@ -228,7 +228,7 @@ new p5(function(c){
 		c.textFont(pixelFont)
 		c.text("Settings", 0, 100, 1920, 300)
 		c.text("Done", c.width / 2, c.height - 150)
-		if(rectClicked(...doneButton)){
+		if(rectClicked(...doneButton) || c.keyIsDown(83)){ // S added for playing on Arcade
 			g.gameState = "playing"
 		}
 		c.textAlign(c.LEFT, c.TOP)
@@ -345,10 +345,10 @@ new p5(function(c){
 		c.text("Back to home", c.width / 2 - 350, c.height - 150)
 		c.text("Retry", c.width / 2 + 350, c.height - 150)
 		c.text(`You failed level ${g.level} :/`, 0, 100, 1920, 300);
-		if(rectClicked(...returnButton)){
+		if(rectClicked(...returnButton) || c.keyIsDown(65)){ // A added for playing on Arcade
 			location.reload()
 		}
-		if(rectClicked(...retryButton)){
+		if(rectClicked(...retryButton) || c.keyIsDown(68)){ // D added for playing on Arcade
 			g.gameState = "playing"
 		}
 		c.textAlign(c.LEFT);
@@ -369,7 +369,7 @@ new p5(function(c){
 		c.textFont(pixelFont)
 		c.text("Next level", c.width / 2, c.height - 150)
 		c.text(`You passed level ${(g.level - 1)}!`, 0, 100, 1920, 300);
-		if(rectClicked(...continueButton)){
+		if(rectClicked(...continueButton) || c.keyIsDown(83)){ // S added for playing on Arcade
 			g.gameState = "playing"
 		}
 		c.textAlign(c.LEFT);
@@ -384,9 +384,25 @@ new p5(function(c){
 				index = i - 1;
 			}
 		}
-		if(c.keyIsDown(48)){
-			index = 9;
+		if(c.keyIsDown(90)){ // Z-button on arcade
+			index = 0;
 		}
+		if(c.keyIsDown(88)){ // X-button on arcade
+			index = 1;
+		}
+		if(c.keyIsDown(67)){ // C-button on arcade
+			index = 2;
+		}
+		if(c.keyIsDown(66)){ // B-button on arcade
+			index = 3;
+		}
+		if(c.keyIsDown(78)){ // N-button on arcade
+			index = 4;
+		}
+		if(c.keyIsDown(77)){ // M-button on arcade
+			index = 5;
+		}
+
 		if(index !== undefined){
 			if(index < g.inventory.length){
 				g.selectedInventoryItem = index;
