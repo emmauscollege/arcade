@@ -519,7 +519,7 @@ var beweegAlles = function() {
       else {
         speler.springKnopIngedruktNu = false;
       }
-      if (keyIsDown(90)) { // X is vuur op arcadebox
+      if (keyIsDown(88)) { // X is vuur op arcadebox
         speler.schietKnopIngedruktNu = true;
       }
       else {
