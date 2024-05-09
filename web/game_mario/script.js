@@ -42,7 +42,7 @@ const Numpad4 = 100;                     // 4 (numpad)
 const Numpad5 = 101;                     // 5 (numpad)
 const Numpad6 = 102;                     // 6 (numpad)
 const toetsenbordCijfers = [Digit1,  Digit2,  Digit3,  Digit4,  Digit5,  Digit6];   // array met toetsenbordcijfers 1 t/m 6
-const keypadCijfers =      [Numpad1, Numpad2, Numpad3, Numpad4, Numpad5, Numpad6];  // array met numpadcijfers 1 t/m 6
+const keypadCijfers =      [81, 69, 82, 90, 88, 67];  // array met QERZXC voor de 6 knoppen op de arcadebox
 
 var pauze;                               // houdt bij of het spel gepauzeerd is
 var huidigLevel;                         // houdt bij welk level op dit moment gespeeld wordt
@@ -445,7 +445,7 @@ var beweegAlles = function() {
   }
   // geluid:
   speler.geluidKnopIngedruktVorige = speler.geluidKnopIngedruktNu;
-  if (keyIsDown(71) || (mouseIsPressed && mouseX >= 610 && mouseX <= 675 && mouseY >= 640 && mouseY <= 705)) {
+  if (keyIsDown(79) || (mouseIsPressed && mouseX >= 610 && mouseX <= 675 && mouseY >= 640 && mouseY <= 705)) {
     speler.geluidKnopIngedruktNu = true;
   }
   else {
@@ -519,7 +519,7 @@ var beweegAlles = function() {
       else {
         speler.springKnopIngedruktNu = false;
       }
-      if (keyIsDown(16)) {
+      if (keyIsDown(90)) { // X is vuur op arcadebox
         speler.schietKnopIngedruktNu = true;
       }
       else {
@@ -3107,7 +3107,7 @@ function draw() {
     textSize(40);
     text("Verzamel zoveel mogelijk muntjes, vermijd de vijanden en ren naar de finish!", 100, 100, 1100, 300);
     text("Gebruik de W, A, D toetsen of de pijltjes [↑ → ←] om Mario te verplaatsen.", 100, 300, 1050, 500);
-    text("Gebruik shift [\u21E7] om te vuren, P om te pauzeren en G om het geluid te dempen.", 100, 500, 1100, 700);
+    text("Gebruik Z om te vuren, P om te pauzeren en O om het geluid te dempen.", 100, 500, 1100, 700);
     text("Levels [→]", 640, 700);
 
     if ((mouseIsPressed && mouseX >= 520 && mouseX <= 760 && mouseY >= 660) || keyIsDown(RIGHT_ARROW) && !keyIsDown(LEFT_ARROW)) {
