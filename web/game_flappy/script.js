@@ -115,7 +115,7 @@ var kleur = [255, 255, 255];
 var doeAlles = function() {
   // zorgt voor de beweging en snelheid van speler2
   if(spelers === 2){
-    if(keyIsDown(87) && spelerY2 >= 0){
+    if(keyIsDown(73) && spelerY2 >= 0){ // key I
       if((spelerSpeed2 - acceleration.up >= -maxSpeed)){
         spelerSpeed2 -= acceleration.up;
       }
@@ -159,7 +159,7 @@ var doeAlles = function() {
   };
   
   //doet hetzelfde als speler2 maar dan voor speler1
-  if(keyIsDown(38) && spelerY >= 0 ){
+  if(keyIsDown(87) && spelerY >= 0 ){ // key = W
     if((spelerSpeed - acceleration.up >= -maxSpeed)){
       spelerSpeed -= acceleration.up;
       
@@ -246,9 +246,9 @@ var resetKoraal = function(){
 }
 
 //functie die wordt aangeroepen wanneer de muis wordt ingedrukt
-function mousePressed() {
+function checkKeyPressed() {
   //zorgt ervoor dat je de muziek aan en uit kan zetten
-  if(spelStatus === SPELEN || spelStatus === GAMEOVER){
+  if((spelStatus === SPELEN || spelStatus === GAMEOVER) && keyIsDown(79)) { // key = O
     if (song.isPlaying()) {
       song.stop();
     } else {
@@ -256,16 +256,16 @@ function mousePressed() {
     }
   };
   //hierdoor kun je een thema kiezen
-  if(spelStatus === UITLEG && mouseX  >= 470 && mouseX <= 545 && mouseY >= 360 && mouseY <= 435){
+  if(spelStatus === UITLEG && keyIsDown(90)){ // key Z
     gekozenWereld = 1;
     kleur = [0, 255, 255];
   }
   //var kleur = [255, 255, 255]
-  if(spelStatus === UITLEG && mouseX  >= 575 && mouseX <= 650 && mouseY >= 360 && mouseY <= 435){
+  if(spelStatus === UITLEG && keyIsDown(88)){ // key X
     gekozenWereld = 2;
     kleur = [255, 0, 255];
   }
-  if(spelStatus === UITLEG && mouseX  >= 680 && mouseX <= 755 && mouseY >= 360 && mouseY <= 435){
+  if(spelStatus === UITLEG && keyIsDown(67)){ // key C
     gekozenWereld = 3;
     kleur = [255, 255, 0];
   }
@@ -347,12 +347,12 @@ function tekenAlles(){
 }
 function spelerKeuze(){
   frameCount = 0;
-  if (key === '1' && gekozenWereld != 0){
+  if (key === 'e' && gekozenWereld != 0){
     spelers = 1;
     spelStatus = AFTELLEN;
     
   }
-  if(key === '2' && gekozenWereld != 0){
+  if(key === 'r' && gekozenWereld != 0){
     spelers = 2;
     spelStatus = AFTELLEN;
     
@@ -419,7 +419,7 @@ function setup() {
  */
 
 function draw() {
-  
+  checkKeyPressed()
   if (spelStatus === UITLEG) {
     spelerKeuze();
     fill(255,120,0);
@@ -440,15 +440,15 @@ function draw() {
     
     text("Welkom bij Flappy Star!", 442.5, 200);
     textSize(17);
-    text("-Druk op pijltje omhoog om omhoog te gaan.", 420, 250);
-    text("-Speler 2 gebruikt de toets w om omhoog te gaan", 420, 275)
-    text("-Gebruik backspace om de highscore te resetten", 420, 300);
-    text("-Klik op de muis om de muziek aan of uit te zetten", 420, 325);
+    text("-Speler 1 gebruikt de toets W om omhoog te gaan", 420, 250);
+    text("-Speler 2 gebruikt de toets I om omhoog te gaan", 420, 275)
+    text("-Gebruik U om de highscore te resetten", 420, 300);
+    text("-Gebruik O om de muziek aan of uit te zetten", 420, 325);
     fill(255, 255, 255)
-    text("Druk op 1 om alleen te spelen", 480, 490);
-    text("Druk op 2 om met twee spelers te spelen", 450, 520)
+    text("Druk op E om alleen te spelen", 480, 490);
+    text("Druk op R om met twee spelers te spelen", 450, 520)
     fill(0,0,0)
-    text('Kies eerst een thema voor je begint:', 465, 352)
+    text('Kies eerst met Z, X of C een thema voor je begint:', 465, 352)
     image(space, 460,367.5, 75, 75)
     image(water, 565, 367.5, 75, 75)
     image(fastfood, 670, 367.5, 75, 75)
@@ -501,7 +501,7 @@ function draw() {
   if (spelStatus === SPELEN) {
     doeAlles();
     tekenAlles();
-    if (keyIsDown(8)){
+    if (keyIsDown(85)){ // key =
       localStorage.setItem('highScore', 0)
     }
     
