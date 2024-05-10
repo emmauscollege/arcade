@@ -50,16 +50,16 @@ var plankY = [100, 100,  300, 300,  500, 500,];
  */
 var beweegAlles = function () {
   // speler
-  if (keyIsDown(LEFT_ARROW)) {
+  if (keyIsDown(74)) { // key J
 speler1X = speler1X -2.3
   }
-  if (keyIsDown(RIGHT_ARROW)) {
+  if (keyIsDown(76)) { // key L
 speler1X = speler1X +2.3
   }
-  if (keyIsDown(DOWN_ARROW)) {
+  if (keyIsDown(75)) { // key K
 speler1Y = speler1Y +2.3
   }
-  if (keyIsDown(UP_ARROW)) {
+  if (keyIsDown(73)) { // key I
 speler1Y = speler1Y -2.3
   }
   // snelheid pacman (speler2)
