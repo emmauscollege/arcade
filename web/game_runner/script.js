@@ -202,8 +202,8 @@ var tekenAlles = function draw() {
 
   
   fill ("white");
-  text("Druk F om op te geven",200,20);
-  if (keyIsDown(70)){
+  text("Druk R om op te geven",200,20);
+  if (keyIsDown(82)){ // key = R
     spelStatus = GAMEOVER;
   }
   
