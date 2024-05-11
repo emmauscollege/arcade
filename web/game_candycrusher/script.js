@@ -352,19 +352,19 @@ function draw() {
         fill(0, 0, 0);
         text('Gebruik de pijltjes toetsen om te bewegen', 400, 150, 700, 400)
         text('Gerbuik de spatie toets om te schieten', 400, 250, 700, 300)
-        text('Klik 1 voor moeilijkheidsgraad makkelijk', 400, 350, 700, 500)
-        text('Klik 2 voor moeilijkheidsgraad medium', 400, 425, 700, 500)
-        text('Klik 3 voor moeilijkheidsgraad moeilijk', 400, 500, 700, 500)
+        text('Klik Z voor moeilijkheidsgraad makkelijk', 400, 350, 700, 500)
+        text('Klik X voor moeilijkheidsgraad medium', 400, 425, 700, 500)
+        text('Klik C voor moeilijkheidsgraad moeilijk', 400, 500, 700, 500)
 
-        if (keyIsDown(49)) {
+        if (keyIsDown(90)) { // key Z
             resetGame();
             spelStatus = SPELENMAKKELIJK;
         };
-        if (keyIsDown(50)) {
+        if (keyIsDown(88)) { // key X
             resetGame();
             spelStatus = SPELENMEDIUM;
         };
-        if (keyIsDown(51)) {
+        if (keyIsDown(67)) { // key C
             resetGame();
             spelStatus = SPELENMOEILIJK;
         };
@@ -446,10 +446,10 @@ function draw() {
         rect(80, 80, width - 2 * 80, height -2 * 80) 
         fill(250, 0, 0)
         text('GAMEOVER', 200, 200, 200, 200);
-        text('Druk op control om nog een keer te spelen', 200, 300, 400, 600);
+        text('Druk op R om nog een keer te spelen', 200, 300, 400, 600);
       
-        //druk op ctrl om verder te gaan
-        if (keyIsDown(17)) {
+        //druk op R om verder te gaan
+        if (keyIsDown(82)) { // key R
           spelStatus = UITLEG
         };
 
@@ -469,10 +469,10 @@ function draw() {
         fill(0, 200, 200);
         text('YOU DID IT :)', 200, 200, 200, 200);
         text(gametijdTekst, 200, 300, 400, 600);
-        text('Druk op control om nog een keer te spelen', 200, 450, 400, 600);
+        text('Druk op R om nog een keer te spelen', 200, 450, 400, 600);
 
-        //druk op ctrl om verder te gaan
-        if (keyIsDown(17)) {
+        //druk op R om verder te gaan
+        if (keyIsDown(82)) { // key R
             spelStatus = UITLEG
         };
 
