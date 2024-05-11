@@ -1,6 +1,6 @@
 # Emmaus Arcade
 
-Here you find information on the Arcade build by tutors at Emmauscollege Rotterdam. We build it to make our students even more enthousiastic to learn coding. We also use it as a showcase of what our students can do. The games are created as part of an assignment by our students of 4-havo and 4-vwo (aged around 15) attending the computer-science course.
+Here you find information on the Arcade build by tutors at Emmauscollege Rotterdam around May 2024. We build it to make our students even more enthousiastic to learn coding. We also use it as a showcase of what our students can do. The games are created as part of an assignment by our students of 4-havo and 4-vwo (aged around 15) attending the computer-science course.
 
 ## Installation instruction
 0. Buy a Rapberry Pi 5
