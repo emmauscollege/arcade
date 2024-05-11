@@ -47,7 +47,7 @@ Returning from the game to the menu is done by pushing the home button. A python
 `./bin/arcade-start.sh` is launched by `arcade-install`. It starts the webserver that serves the menu and game files and it starts the hotkey-daemon.
 
 ### Home script
-`./bin/arcade-home.sh` is launched by `arcade-start` after reboot or by `hotkey-daemon.py` after pressing the home button. It kills all running webbrowsers and starts a new webbrowser in kiosk-mode (full screen) opening the mnue page.
+`./bin/arcade-home.sh` is launched by `arcade-start` after reboot or by `hotkey-daemon.py` after pressing the home button. It kills all running webbrowsers and starts a new webbrowser in kiosk-mode (full screen) opening the menu page.
 
 
 
