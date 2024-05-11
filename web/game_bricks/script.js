@@ -3,7 +3,7 @@ console.log("start variabelen declareren"); // berichtje voor debuggen
 
 var spelStatus = "beginscherm"; // spelStatus kan zijn: "beginscherm", "spelen", "eindscherm"
 var score = 0; //score
-var platformX = 0;
+var platformX = 10;
 var balX = 400;
 var balY = 700;
 var balsnelheidX = 5;
@@ -43,8 +43,8 @@ var tekenEindscherm = function () {
   text("Game over", 300, 200);
   text("Score:", 340, 350);
   text(score, 390, 400)
-  text("Herstart", 125, 700);
-  text("Startscherm", 500, 700);
+  text("Herstart (W)", 125, 700);
+  text("Startscherm (S)", 500, 700);
   fill("red");
   noStroke();
   rect(0, 600, 800, 10);
@@ -118,7 +118,7 @@ function draw() {
   //beginscherm en startknop
   if (spelStatus === "beginscherm") {
     tekenStartscherm();
-    if (mouseIsPressed && mouseX > 250 && mouseX < 550 && mouseY > 325 && mouseY < 475) {
+    if (keyIsDown(13)) { // key Enter
       spelStatus = "spelen";
     }
   }
@@ -223,18 +223,29 @@ function draw() {
     balsnelheidX = 5;//balsnelheidX resetten
     balsnelheidY = -5;//balsnelheidY resetten
     //knop om naar het beginscherm te gaan
-    if (mouseIsPressed && mouseX > 400 && mouseY > 600) {
+    if (keyIsDown(83)) { // key W
       spelStatus = "beginscherm"; 
       score = 0;
       }
     //knop om opnieuw te spelen  
-    if (mouseIsPressed && mouseX < 400 && mouseY > 600) {
+    if (keyIsDown(87)) { // key S
       spelStatus = "spelen";
       score = 0;
     } 
   }
   
   //platform laten bewegen
-  platformX = mouseX - 50;
+  if (keyIsDown(37)) { // Key left
+    platformX = platformX - 10;
+    if (platformX < 10) {
+      platformX = 10;
+    }
+  }
+  if (keyIsDown(39)) { // Key right
+    platformX = platformX + 10;
+    if (platformX > 800 - 100 - 10) {
+      platformX = 800 - 100 - 10;
+    }
+  }
   
 } /* einde code */
