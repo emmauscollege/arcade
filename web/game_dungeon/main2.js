@@ -110,7 +110,7 @@ achtergrond2 = loadImage ('grondachter2.png');
 
 var gif = 0;
 //variabele posities
-var grotegloeienegenadewatisdiegeertwildersdieikophetjeugdjournaalhebgezientocheenraregast = 0;
+var gezien = 0;
 var Sp = 0;
 var Pos1 = 0;
 var Pos2 = 0;
@@ -2298,7 +2298,7 @@ function draw() {
         if (gif > 60){
             gif = 0;
         }
-        if(grotegloeienegenadewatisdiegeertwildersdieikophetjeugdjournaalhebgezientocheenraregast == 0){
+        if(gezien == 0){
     image(achtergrond, 0, 0);
         }
         else{
@@ -2369,8 +2369,8 @@ function draw() {
     text("streeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeepje", 600, 353);
     textSize(20);
     text("Je hebt " + Room + " kamers getrotseerd.", 500, 400);
-    text("Klik op de linker muisknop om het opnieuw te proberen", 400, 450);
-    if (mouseIsPressed){
+    text("Klik op R om het opnieuw te proberen", 400, 450);
+    if (keyIsDown(82)){ // key R
 gif = 0;
 grotegloeienegenadewatisdiegeertwildersdieikophetjeugdjournaalhebgezientocheenraregast = 0;
 Sp = 0;
