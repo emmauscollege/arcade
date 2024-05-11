@@ -428,45 +428,46 @@ function pickApple(snake){
 // knoppen een vetraging toe om te voorkomen dat je gelijk een andere knop indrukt
 // als je het volgende scherm betreed.
 function drawButton(button){
-  if(mouseX > button.x && mouseY > button.y && mouseX < button.x + button.w && mouseY < button.y + button.h){
-    fill(255,255,255);
-    if(mouseIsPressed && tick > no_input_tick){
-      if(button.text === "classic"){
+ // if(mouseX > button.x && mouseY > button.y && mouseX < button.x + button.w && mouseY < button.y + button.h){
+ //   fill(255,255,255);
+ ambientColor(1);
+    if(tick > no_input_tick){ 
+      if(keyIsDown(69) && button.text === "E=classic"){ // key E
         no_input_tick = tick + 30;
         countdown_ms = time_ms + 3000;
         gameState = 0;
         gameMode = 0;
         restartData();
       }
-      else if(button.text === "duel"){
-        no_input_tick = tick + 30;
+      else if(keyIsDown(88) && button.text === "X=duel"){ // key X
+        no_input_tick = tick + 30; 
         countdown_ms = time_ms + 3000;
         gameState = 0;
         gameMode = 1;
         restartData();
       }
-      else if(button.text === "again"){
+      else if(keyIsDown(82) && button.text === "R=again"){ // key R
         no_input_tick = tick + 30;
         countdown_ms = time_ms + 3000;
         gameState = 0;
         restartData();
       }
-      else if(button.text === "menu"){
+      else if(keyIsDown(67) && button.text === "C=menu"){ // key C
         no_input_tick = tick + 30;
         gameState = 2;
         restartData();
       }
-      else if(button.text == "2snek"){
-        no_input_tick = tick + 30;
-        countdown_ms = time_ms + 3000;
-        gameState = 0;
-        gameMode = 2;
-        restartData();
-      }
-  }
-  }
-  else {
-    ambientColor(1);
+      //else if(button.text == "2snek"){
+      //  no_input_tick = tick + 30;
+      //  countdown_ms = time_ms + 3000;
+      //  gameState = 0;
+      //  gameMode = 2;
+      //  restartData();
+      //}
+  //}
+  //}
+  //else {
+  //  ambientColor(1);
   }
   rect(button.x,button.y,button.w,button.h);
   ambientColor(0);
@@ -516,15 +517,16 @@ function setup() {
 
   restartData();
 
-  button1p = new button(screenWidth/2-150,screenHeight/5,300,100,"classic");
-  button2p = new button(screenWidth/2-150,screenHeight/5*2,300,100,"duel");
-  buttonreset = new button(screenWidth/2-150,screenHeight/5,300,100,"again");
-  buttonmainmenu = new button(screenWidth/2-150,screenHeight/5*2,300,100,"menu");
+  button1p = new button(screenWidth/2-200,screenHeight/5,400,100,"E=classic");
+  button2p = new button(screenWidth/2-200,screenHeight/5*2,400,100,"X=duel");
+  buttonreset = new button(screenWidth/2-200,screenHeight/5,400,100,"R=again");
+  buttonmainmenu = new button(screenWidth/2-200,screenHeight/5*2,400,100,"C=menu");
   buttonA = new button(10,screenHeight-110,100,100,"A");
   buttonD = new button(115,screenHeight-110,100,100,"D");
   buttonJ = new button(screenWidth - 110 - 105, screenHeight-110,100,100,"J");
   buttonL = new button(screenWidth- 110, screenHeight-110,100,100,"L");
-  button2pS = new button(screenWidth/2-150,screenHeight/5*3,300,100,"2snek");
+  button2pS = new button(screenWidth*2,screenHeight/5*3,300,100,"2snek");
+  // button2pS = new button(screenWidth/2-150,screenHeight/5*3,300,100,"2snek");
  
 }
 // zet de fill kleur naar een fadende regenboog kleur. De inverse om contrast te geven.

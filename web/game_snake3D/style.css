@@ -1,17 +1,24 @@
-/* CSS bestand
-   Hierin staat de opmaak van onze html pagina
-*/
-
-/* marges aan de zijkant van de pagina verwijderen */
-html,body {
-  margin: 0;
+/* canvas sizing CSS */
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
 }
 
-/* laat het canvas waarin we onze game maken
-   de volle breedte van het window gebruiken 
-*/
-.p5Canvas {
-  height: 100% !important;
-  width: 100% !important;
+canvas {
+  /* resize to full window while keeping aspect ratio */
+  width:100% !important;
+  height:100% !important;
+  object-fit: contain;
+
+  /* align horizontally and vertically centered */
+  margin: auto;
+  display:block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
+/* game specific CSS */
