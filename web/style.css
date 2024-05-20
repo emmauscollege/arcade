@@ -49,7 +49,6 @@ a:focus {
 
 .top {
   display: block;
-  width: 90%;
   margin: auto;
   text-align: center;
 }
@@ -58,6 +57,7 @@ a:focus {
   display: block;
   margin: auto;
   width: 100%;
+  max-width: 1600px;
   animation: glow 1s infinite alternate;
 }
 
@@ -71,24 +71,38 @@ a:focus {
   }
 }
 
-/* image gallery
-   modified example taken from w3school.org
- */
-
-.gallery-container {
+.top .gallery-container {
   font-size: xx-large;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.gallery-item {
-  margin: 5px;
+.top .gallery-item {
+  margin: 10px;
+  padding: 10px;
+  width: calc(800px - 20px - 20px) ;
+  box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
+}
+
+/* image gallery
+   modified example taken from w3school.org
+ */
+
+.games .gallery-container {
+  font-size: xx-large;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.games .gallery-item {
+  margin: 10px;
   box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
   background-color: var(--color-fg);
 }
 
-.gallery-item a{
+.games .gallery-item a{
   display: block;
   width: 300px;
   height: 250px;
@@ -97,18 +111,18 @@ a:focus {
   transition: all 0.3s;
 }
 
-.gallery-item a:focus {
+.games .gallery-item a:focus {
   transform: scale(0.95);
   filter: brightness(1);
 }
 
-.gallery-item-img {
+.games .gallery-item-img {
   display: block;
   width: 100%;
   aspect-ratio: 16 /9;
 }
 
-.gallery-item-desc {
+.games .gallery-item-desc {
   width: 100%;
   height: 81.25px;
   /* 250 - 300 / (16/9) = 81.25; this value shouldn't be hard coded */
