@@ -85,6 +85,12 @@ a:focus {
   box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
 }
 
+.top .gallery-item a:focus {
+  transform: scale(0.95);
+  filter: brightness(1);
+  border: solid 2px red;
+}
+
 /* image gallery
    modified example taken from w3school.org
  */
@@ -102,7 +108,7 @@ a:focus {
   background-color: var(--color-fg);
 }
 
-.games .gallery-item a{
+.games .gallery-item a {
   display: block;
   width: 300px;
   height: 250px;

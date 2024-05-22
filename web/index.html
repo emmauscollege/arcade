@@ -28,6 +28,13 @@
       </div>
 
       <div class="gallery-item">
+        <h1>Muziek</h1>
+        <p>De tracks zijn gemaakt door leerlingen uit de zesde klas van het vwo.<br>
+          Je krijgt het vak muziek in de brugklas en de tweede klas. Na de derde klas kun je muziek kiezen als eindexamenvak.
+        </p>
+      </div>
+
+      <div class="gallery-item">
         <h1>Informatica</h1>
         <p>De games zijn geprogrammeerd in javascipt door leerlingen uit de vierde klas.<br>
           Na de derde klas kunnen alle leerlingen op de havo en het vwo informatica kiezen als eindexamenvak.<br>
@@ -35,14 +42,14 @@
       </div>
 
       <div class="gallery-item">
-        <h1>Jouw game in deze kast</h1>
-        Heb je informatica gekozen?<br>
-        Ben je trots op de game die je gemaakt hebt?<br>
-        Dan mag jouw game in deze Emmaus Arcade.
+        <h1>Jouw track/game in deze kast</h1>
+        Heb je muziek of informatica gekozen?<br>
+        Ben je trots op de track/game die je gemaakt hebt?<br>
+        Dan mag jouw track/game in deze Emmaus Arcade.
       </div>
 
       <div class="gallery-item">
-        <h1>Let's play</h1>
+        <h1>Listen & Play</h1>
         <p>
           Kies je game met rechts/links en enter.<br>
           <img src="img/controls.png" width="90%">
@@ -51,6 +58,51 @@
 
     </div>
 
+  </div>
+
+  <!--- tracks header-->
+  <div class="games">
+    <div class="gallery-container">
+
+       <!-- tracks dance 23/24 -->
+
+       <div class="gallery-item">
+        <a href="#track-01" id="track-01" >
+          <img class="gallery-item-img" src="music/music.jpg">
+          <div class="gallery-item-desc"><audio style="height: 30px;" src="music/Dance_Track_16-Marissa.mp3" controls loop></audio>16 by Marissa</div>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="#track-02" id="track-02" >
+          <img class="gallery-item-img" src="music/music.jpg">
+          <div class="gallery-item-desc"><audio style="height: 30px;" src="music/Dance_Track_Deadline-Jakin.mp3" controls loop></audio>Deadline by Jakin</div>
+        </a>
+      </div>
+
+      <div class="gallery-item">
+        <a href="#track-02" id="track-02" >
+          <img class="gallery-item-img" src="music/music.jpg">
+          <div class="gallery-item-desc"><audio style="height: 30px;" src="music/Dance_Track_Exhale-Jada.mp3" controls loop></audio>Exhale by Jada</div>
+        </a>
+      </div>
+      
+      <div class="gallery-item">
+        <a href="#track-02" id="track-02" >
+          <img class="gallery-item-img" src="music/music.jpg">
+          <div class="gallery-item-desc"><audio style="height: 30px;" src="music/Dance_Track_Tea_Climax-Nynke.mp3" controls loop></audio>Tea Climax by Nynke</div>
+        </a>
+      </div>
+      
+      <div class="gallery-item">
+        <a href="#track-02" id="track-02" >
+          <img class="gallery-item-img" src="music/music.jpg">
+          <div class="gallery-item-desc"><audio style="height: 30px;" src="music/Dance_Track-Luna.mp3" controls loop></audio>by Luna</div>
+        </a>
+      </div>
+    
+    <!--- tracks footer-->
+    </div>
   </div>
 
   <!--- games header-->
@@ -172,6 +224,15 @@
       // Function to manage moving the focus
       function moveFocus(index) {
         links[index].focus(); // Set focus to the link at 'index'
+
+        // dirty trick to make next song play
+        // ignore errors in case song doesn't exist
+        try {links[index].querySelectorAll('audio')[0].play();}
+        catch(err) { console.log(err.message);}
+        try {links[index-1].querySelectorAll('audio')[0].pause();}
+        catch(err) { console.log(err.message);}
+        try {links[index+1].querySelectorAll('audio')[0].pause();}
+        catch(err) { console.log(err.message);}
       }
 
       // Event listener for keyboard navigation
