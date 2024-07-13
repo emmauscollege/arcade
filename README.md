@@ -26,7 +26,7 @@ The joysticks and buttons are connected to an ipac. The ipac emulates a keyboard
 ### Monitor
 The monitor is connected via hdmi. The resolotion of the monitor is full-hd (1920 x 1080 pixels). A higher resolution more quickly results in performance issues on the Raspberry Pi when running more complex or inefficiently coded games.
 ### Audio
-The speakers are connected to the headphones output of the monitor. We use a computer speaker set with a volume control button accessable through the backdoor of the cabinet.
+The speakers are connected to the headphones output of the monitor. We initially used a computer speaker set with a volume control button accessable through the backdoor of the cabinet. Because the speakerset didn't fit in the cabinet, we changed it to two auto speakers with a 10cm diameter and a small stereo amplifier.
 ### Cabinet
 The cabinet is designed and milled by a supplier in the area. We screwed the plates together, added the T-mold and mounted the electronics.
 
