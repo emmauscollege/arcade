@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!--- code derived from w3schools.org-->
+<html>
+
+<head>
+  <link rel='stylesheet' type='text/css' href='../style.css'>
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+  <!--- page intro -->
+  <div class="top">
+    <a href="/">
+      <div class="top-banner">
+        <img src="../img/banner-asciiart.png">
+      </div>
+    </a>
+
+    <div class="gallery-container">
+
+
+      <div class="gallery-item">
+        <h1>Handvaardigheid en Techniek</h1>
+        <p>De kast is geverfd en gespoten door 2<sup>e</sup> klas leerlingen.<br>
+          Je krijgt het vak handvaardigheid en techniek in de brugklas, 2<sup>e</sup> en 3<sup>e</sup>  klas.
+        </p>
+      </div>
+
+      <div class="gallery-item">
+        <h1>Muziek</h1>
+        <p>De tracks zijn gemaakt in GarageBand door 5<sup>e</sup> klas vwo-leerlingen.<br>
+          Je krijgt het vak muziek in de brugklas en de 2<sup>e</sup> klas. Na de 3<sup>e</sup> klas kun je muziek kiezen als eindexamenvak.
+        </p>
+      </div>
+
+      <div class="gallery-item">
+        <h1>Informatica</h1>
+        <p>De games zijn geprogrammeerd in JavaScipt door 4<sup>e</sup> klas leerlingen.<br>
+          Na de 3<sup>e</sup> klas kunnen alle leerlingen op de havo en het vwo informatica kiezen als eindexamenvak.<br>
+        </p>
+      </div>
+
+      <div class="gallery-item">
+        <h1>Jouw track/game in deze kast</h1>
+        Heb je muziek of informatica gekozen?<br>
+        Ben je trots op de track/game die je gemaakt hebt?<br>
+        Dan mag jouw track/game in deze Emmaus Arcade.
+      </div>
+
+      <div class="gallery-item">
+        <h1>Listen & Play</h1>
+        <p>
+          Kies je track/game met rechts/links en enter.<br>
+          Speel met deze controls.<br>
+          <img src="img/controls.png" width="90%">
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- page footer -->
+  <div class="bottom">
+    <hr>
+    <table>
+      <tr>
+        <td>
+          Meer informatie over het vak informatica op het Emmauscollege<br>
+          https://informatica.emmauscollege.nl/
+        </td>
+        <td> Meer informatie over deze arcadekast<br>
+          https://github.com/emmauscollege/arcade
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- keyboard control -->
+  <!--- code derived from chatgpt -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const links = document.querySelectorAll('a'); // Select all anchor tags
+      let currentIndex = 0; // Start at the first anchor
+
+      // Function to manage moving the focus
+      function moveFocus(index) {
+        links[index].focus(); // Set focus to the link at 'index'
+
+        // dirty trick to make next song play
+        // ignore errors in case song doesn't exist
+        try {links[index].querySelectorAll('audio')[0].play();}
+        catch(err) { console.log(err.message);}
+        try {links[index-1].querySelectorAll('audio')[0].pause();}
+        catch(err) { console.log(err.message);}
+        try {links[index+1].querySelectorAll('audio')[0].pause();}
+        catch(err) { console.log(err.message);}
+      }
+
+      // Event listener for keyboard navigation
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'ArrowRight') {
+          if (currentIndex < links.length - 1) { // Check if it's not the last link
+            currentIndex++;
+            moveFocus(currentIndex);
+          }
+        } else if (event.key === 'ArrowLeft') {
+          if (currentIndex > 0) { // Check if it's not the first link
+            currentIndex--;
+            moveFocus(currentIndex);
+          }
+        }
+      });
+
+      // Initially focus to the top
+      moveFocus(0);
+    });
+  </script>
+
+</body>
+
+</html>

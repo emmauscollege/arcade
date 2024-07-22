@@ -17,54 +17,21 @@
       </div>
     </a>
 
-    <div class="gallery-container">
-
-
-      <div class="gallery-item">
-        <h1>Handvaardigheid en Techniek</h1>
-        <p>De kast is geverfd en gespoten door 2<sup>e</sup> klas leerlingen.<br>
-          Je krijgt het vak handvaardigheid en techniek in de brugklas, 2<sup>e</sup> en 3<sup>e</sup>  klas.
-        </p>
-      </div>
-
-      <div class="gallery-item">
-        <h1>Muziek</h1>
-        <p>De tracks zijn gemaakt in GarageBand door 5<sup>e</sup> klas vwo-leerlingen.<br>
-          Je krijgt het vak muziek in de brugklas en de 2<sup>e</sup> klas. Na de 3<sup>e</sup> klas kun je muziek kiezen als eindexamenvak.
-        </p>
-      </div>
-
-      <div class="gallery-item">
-        <h1>Informatica</h1>
-        <p>De games zijn geprogrammeerd in JavaScipt door 4<sup>e</sup> klas leerlingen.<br>
-          Na de 3<sup>e</sup> klas kunnen alle leerlingen op de havo en het vwo informatica kiezen als eindexamenvak.<br>
-        </p>
-      </div>
-
-      <div class="gallery-item">
-        <h1>Jouw track/game in deze kast</h1>
-        Heb je muziek of informatica gekozen?<br>
-        Ben je trots op de track/game die je gemaakt hebt?<br>
-        Dan mag jouw track/game in deze Emmaus Arcade.
-      </div>
-
-      <div class="gallery-item">
-        <h1>Listen & Play</h1>
-        <p>
-          Kies je track/game met rechts/links en enter.<br>
-          Speel met deze controls.<br>
-          <img src="img/controls.png" width="90%">
-        </p>
-      </div>
-
-    </div>
-
   </div>
 
-  <!--- tracks header-->
+  <!--- gallery header-->
   <div class="games">
     <div class="gallery-container">
 
+       <!-- info 23/24 -->
+
+       <div class="gallery-item">
+         <a href="info_makingof/">
+           <img class="gallery-item-img" src="info_makingof/screenshot.jpg">
+           <div class="gallery-item-desc">Making Of</div>
+         </a>
+       </div>
+   
        <!-- tracks dance 23/24 -->
        <div class="gallery-item">
         <a href="#track-06" id="track-06" >
@@ -109,14 +76,6 @@
           <div class="gallery-item-desc"><audio style="height: 30px;" src="music/Dance_Track-Luna.mp3" controls loop></audio>by Luna</div>
         </a>
       </div>
-    
-    <!--- tracks footer-->
-    </div>
-  </div>
-
-  <!--- games header-->
-  <div class="games">
-    <div class="gallery-container">
 
       <!-- games 23/24 -->
 
@@ -212,7 +171,7 @@
         </a>
       </div>
 
-      <!--- games footer-->
+      <!--- gallery footer-->
     </div>
   </div>
 
@@ -237,7 +196,7 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const links = document.querySelectorAll('a'); // Select all anchor tags
-      let currentIndex = 0; // Start at the first anchor
+      let currentIndex = 8; // Start at an anchor in the center area of the screen
 
       // Function to manage moving the focus
       function moveFocus(index) {
@@ -266,10 +225,21 @@
             moveFocus(currentIndex);
           }
         }
+        if (event.key === 'ArrowDown') {
+          if (currentIndex < links.length - 5) { // Check if it's not the last link
+            currentIndex+=5;
+            moveFocus(currentIndex);
+          }
+        } else if (event.key === 'ArrowUp') {
+          if (currentIndex > 4) { // Check if it's not the first link
+            currentIndex-=5;
+            moveFocus(currentIndex);
+          }
+        }
       });
 
-      // Initially focus to the top
-      moveFocus(0);
+      // Initial focus
+      moveFocus(currentIndex);
     });
   </script>
 
