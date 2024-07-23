@@ -91,6 +91,20 @@ a:focus {
   border: solid 2px red;
 }
 
+.top .gallery-item-img {
+  display: block;
+  width: 100%;
+  /*aspect-ratio: 16 /9;*/
+}
+
+.top .gallery-item-desc {
+  width: 100%;
+  height: 81.25px;
+  /* 250 - 300 / (16/9) = 81.25; this value shouldn't be hard coded */
+  text-align: center;
+  background-color: var(--color-bg);
+}
+
 /* image gallery
    modified example taken from w3school.org
  */
@@ -104,7 +118,7 @@ a:focus {
 
 .games .gallery-item {
   margin: 10px;
-  box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
+  box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.00);
   background-color: var(--color-fg);
 }
 
@@ -113,13 +127,14 @@ a:focus {
   width: 300px;
   height: 250px;
   transform: scale(1);
-  filter: brightness(0.7);
+  filter: brightness(0.3);
   transition: all 0.3s;
 }
 
 .games .gallery-item a:focus {
   transform: scale(0.95);
   filter: brightness(1);
+  box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
 }
 
 .games .gallery-item-img {
@@ -145,4 +160,33 @@ a:focus {
 .bottom table {
   width: 100%;
 
+}
+
+/* help banner
+   created with chat-gpt
+ */
+
+#banner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+  box-shadow: 3px 2px 50px 1px rgba(255, 255, 255, 0.90);
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 1s;
 }
