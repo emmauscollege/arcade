@@ -91,6 +91,20 @@ a:focus {
   border: solid 2px red;
 }
 
+.top .gallery-item-img {
+  display: block;
+  width: 100%;
+  /*aspect-ratio: 16 /9;*/
+}
+
+.top .gallery-item-desc {
+  width: 100%;
+  height: 81.25px;
+  /* 250 - 300 / (16/9) = 81.25; this value shouldn't be hard coded */
+  text-align: center;
+  background-color: var(--color-bg);
+}
+
 /* image gallery
    modified example taken from w3school.org
  */

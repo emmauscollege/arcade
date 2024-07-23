@@ -11,11 +11,9 @@
 
   <!--- page intro -->
   <div class="top">
-    <a href="/">
-      <div class="top-banner">
-        <img src="img/banner-asciiart.png">
-      </div>
-    </a>
+    <div class="top-banner">
+      <img src="img/banner-asciiart.png">
+    </div>
 
   </div>
 
@@ -196,24 +194,35 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const links = document.querySelectorAll('a'); // Select all anchor tags
-      let currentIndex = 8; // Start at an anchor in the center area of the screen
-
+      let nrOfColumns=calcColumns();
+      let currentIndex = Math.floor(nrOfColumns+(nrOfColumns+1)/2-1); // Start halfway at second row
       // Function to manage moving the focus
       function moveFocus(index) {
         links[index].focus(); // Set focus to the link at 'index'
 
         // dirty trick to make next song play
         // ignore errors in case song doesn't exist
+        for (let i in links) {
+          try {links[i].querySelectorAll('audio')[0].pause();}
+          catch(err) { console.log(err.message);}
+        }
         try {links[index].querySelectorAll('audio')[0].play();}
         catch(err) { console.log(err.message);}
-        try {links[index-1].querySelectorAll('audio')[0].pause();}
-        catch(err) { console.log(err.message);}
-        try {links[index+1].querySelectorAll('audio')[0].pause();}
-        catch(err) { console.log(err.message);}
+      }
+
+      // Function to determine the number of blocks on one row
+      // outcome changes when window resizes
+      function calcColumns() {
+        const grid = Array.from(document.querySelector(".gallery-container").children);
+        const baseOffset = grid[0].offsetTop;
+        const breakIndex = grid.findIndex(item => item.offsetTop > baseOffset);
+        const numPerRow = (breakIndex === -1 ? grid.length : breakIndex); // in case there is only 1 row
+        return numPerRow;
       }
 
       // Event listener for keyboard navigation
       document.addEventListener('keydown', function (event) {
+        const itemsPerRow = calcColumns();
         if (event.key === 'ArrowRight') {
           if (currentIndex < links.length - 1) { // Check if it's not the last link
             currentIndex++;
@@ -226,13 +235,13 @@
           }
         }
         if (event.key === 'ArrowDown') {
-          if (currentIndex < links.length - 5) { // Check if it's not the last link
-            currentIndex+=5;
+          if (currentIndex < links.length - itemsPerRow) { // Check if it's not the last link
+            currentIndex+=itemsPerRow;
             moveFocus(currentIndex);
           }
         } else if (event.key === 'ArrowUp') {
-          if (currentIndex > 4) { // Check if it's not the first link
-            currentIndex-=5;
+          if (currentIndex > itemsPerRow -1) { // Check if it's not the first link
+            currentIndex-=itemsPerRow;
             moveFocus(currentIndex);
           }
         }
