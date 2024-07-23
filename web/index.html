@@ -287,10 +287,9 @@
 
         window.onload = resetTimer;
         document.onmousemove = resetTimer;
-        document.onkeypress = resetTimer;
+        document.onkeydown = resetTimer;
         document.ontouchstart = resetTimer; // For touch devices
         document.onscroll = resetTimer;
-        document.onfocusin = resetTimer; // For focus changes
     };
 
     inactivityTime();
