@@ -189,6 +189,11 @@
     </table>
   </div>
 
+  <!--- help banner, appears after period of inactivity -->
+  <div id="overlay">
+    <img id="banner" src="img/help.png" alt="help banner">
+  </div>
+
   <!-- keyboard control -->
   <!--- code derived from chatgpt -->
   <script>
@@ -250,6 +255,45 @@
       // Initial focus
       moveFocus(currentIndex);
     });
+  </script>
+
+  <!-- help banner -->
+  <!--- code derived from chatgpt -->
+  <script>
+    let inactivityTime = function () {
+        let time;
+        let overlay = document.getElementById('overlay');
+        let banner = document.getElementById('banner');
+
+        function resetTimer() {
+            clearTimeout(time);
+            banner.style.opacity = '0';
+            overlay.style.opacity = '0';
+            time = setTimeout(showBanner, 5000);
+            setTimeout(() => {
+                banner.style.display = 'none';
+                overlay.style.display = 'none';
+            }, 1000);
+        }
+
+        function showBanner() {
+            banner.style.display = 'block';
+            overlay.style.display = 'block';
+            setTimeout(() => {
+                banner.style.opacity = '1';
+                overlay.style.opacity = '1';
+            }, 10); // slight delay to ensure display block is set
+        }
+
+        window.onload = resetTimer;
+        document.onmousemove = resetTimer;
+        document.onkeypress = resetTimer;
+        document.ontouchstart = resetTimer; // For touch devices
+        document.onscroll = resetTimer;
+        document.onfocusin = resetTimer; // For focus changes
+    };
+
+    inactivityTime();
   </script>
 
 </body>

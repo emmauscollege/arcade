@@ -161,3 +161,31 @@ a:focus {
   width: 100%;
 
 }
+
+/* help banner
+   created with chat-gpt
+ */
+
+#banner {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  max-width: 100%;
+  max-height: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 1s;
+}
