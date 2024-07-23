@@ -113,7 +113,7 @@ a:focus {
   font-size: xx-large;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
 }
 
 .games .gallery-item {
