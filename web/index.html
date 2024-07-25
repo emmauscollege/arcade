@@ -205,6 +205,9 @@
       function moveFocus(index) {
         links[index].focus(); // Set focus to the link at 'index'
 
+        // scroll to center focussed image
+        links[index].scrollIntoView({behavior: "auto", block: "center"}); 
+
         // dirty trick to make next song play
         // ignore errors in case song doesn't exist
         for (let i in links) {
@@ -233,27 +236,32 @@
             currentIndex++;
             moveFocus(currentIndex);
           }
+          event.preventDefault(); // to prevent undesired scrolling
         } else if (event.key === 'ArrowLeft') {
           if (currentIndex > 0) { // Check if it's not the first link
             currentIndex--;
             moveFocus(currentIndex);
           }
+          event.preventDefault(); // to prevent undesired scrolling
         }
         if (event.key === 'ArrowDown') {
           if (currentIndex < links.length - itemsPerRow) { // Check if it's not the last link
             currentIndex+=itemsPerRow;
             moveFocus(currentIndex);
           }
+          event.preventDefault(); // to prevent undesired scrolling
         } else if (event.key === 'ArrowUp') {
           if (currentIndex > itemsPerRow -1) { // Check if it's not the first link
             currentIndex-=itemsPerRow;
             moveFocus(currentIndex);
           }
+          event.preventDefault(); // to prevent undesired scrolling
         }
       });
 
       // Initial focus
       moveFocus(currentIndex);
+      document.documentElement.scrollTop = 0; 
     });
   </script>
 
