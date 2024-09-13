@@ -32,7 +32,7 @@ The cabinet is designed and milled by a supplier in the area. We screwed the pla
 
 ## Software explained
 ### Games
-The games programmed in JavaScript using the p5js library. Games are made by our students from 4-vwo and 4-havo (aged around 15). The p5js library and all other files needed to run the game are available locally on our Arcade. The must be playable using keyboard input acoording to the control-keyboard mapping of our Arcade.
+The games programmed in JavaScript using the p5js library. Games are made by our students from 4-vwo and 4-havo (aged around 15). The p5js library and all other files needed to run the game are available locally on our Arcade. The game must use keyboard input according to the control-keyboard mapping of our Arcade.
 
 ### Menu
 The menu is a webpage. Selection of the game works by manipulating the active element on the page. This can be done using the controls or any other keyboard.
