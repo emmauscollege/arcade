@@ -41,7 +41,7 @@ The menu is a webpage. Selection of the game works by manipulating the active el
 Returning from the game to the menu is done by pushing the home button. A python programm `hotkey-deamon.py` is running in the background to make this happen. This way, we are not depending on the game to be able to correctly return to the main menu.
 
 ### Upgrade script
-`arcade-install.sh` autostarts when booting the Arcade, after the GUI has started. If internet is available, the script re-installs downloads the latest version of the arcade from github.
+`arcade-install.sh` autostarts when booting the Arcade, after the GUI has started. If internet is available, the script downloads and re-installs the latest version of the arcade from github.
 
 ### Start script
 `./bin/arcade-start.sh` is launched by `arcade-install`. It starts the webserver that serves the menu and game files and it starts the hotkey-daemon.
