@@ -222,6 +222,7 @@
       const links = document.querySelectorAll('a'); // Select all anchor tags
       let nrOfColumns=calcColumns();
       let currentIndex = Math.floor(nrOfColumns+(nrOfColumns+1)/2-1); // Start halfway at second row
+      
       // Function to manage moving the focus
       function moveFocus(index) {
         links[index].focus(); // Set focus to the link at 'index'
