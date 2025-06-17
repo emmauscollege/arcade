@@ -1,0 +1,11 @@
+{
+  "name": "Moeilijk",
+  "short_name": "Moeilijk",
+  "icons": [{
+    "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "start_url": "index.html",
+  "display": "fullscreen"
+}
