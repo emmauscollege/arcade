@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Arcade
-Exec=lxterminal -e "bash /home/arcade/Arcade/install-arcade.sh"
+Exec=lxterminal -e "bash /home/arcade/install-arcade.sh; read -p 'Press [ENTER] to close'"
