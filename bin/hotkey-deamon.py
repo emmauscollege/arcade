@@ -14,7 +14,7 @@ def listen_for_a_key(device):
         if event.type == ecodes.EV_KEY:
             key_event = categorize(event)
             if key_event.keystate == key_event.key_down:
-                if key_event.keycode == 'KEY_F1':
+                if key_event.keycode == 'KEY_1':
                     run_script()
 
 def is_keyboard(device):
