@@ -1,31 +1,42 @@
 #!/bin/bash
 
-# Ping Google's DNS to check for internet connectivity
-if ping -c 1 8.8.8.8 &> /dev/null; then
+# Wait until the network is up (it may still be connecting right after boot)
+# and check with https instead of ping, because ping is often blocked
+echo "Checking internet connection..."
+nm-online -s -q -t 60
+online=no
+for i in 1 2 3 4 5; do
+    if wget -q --spider --tries=1 --timeout=10 https://github.com; then
+        online=yes
+        break
+    fi
+    sleep 3
+done
+
+if [ $online = yes ]; then
     echo "Internet is connected."
 
-    echo "Updating rapberry pi OS..."
-    sudo apt -yq update
-    sudo apt -yq upgrade
-    sudo apt -yq install wget unzip 
-    sudo apt -yq install unclutter # did this manually as it didn't seem to work somehouw
-    sudo apt -yq install python3-pynput
-    sudo apt -yq install python3-evdev
-
     echo "Updating arcade..."
-    wget https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip
-    unzip -o ~/Downloads/arcade.zip -d ~/Downloads/
-    rm -rf ~/Downloads/arcade.zip
-    rm -rf ~/web
-    mv ~/Downloads/arcade-main/web ~/web
-    rm -rf ~/bin
-    mv ~/Downloads/arcade-main/bin ~/bin
-    # copy files needed for auto-update, if it fails we still have to old version
-    mkdir -p ~/.config/autostart/
-    cp ~/Downloads/arcade-main/.config/autostart/arcade.desktop ~/.config/autostart/
-    cp ~/Downloads/arcade-install.sh ~/arcade-install.sh.backup
-    cp ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
-    # rm -rf ~/Downloads/arcade-main
+    rm -rf ~/Downloads/arcade.zip ~/Downloads/arcade-main
+    # only replace the current version if the download is complete
+    if wget -q https://github.com/emmauscollege/arcade/archive/refs/heads/main.zip -O ~/Downloads/arcade.zip &&
+        unzip -qo ~/Downloads/arcade.zip -d ~/Downloads/ &&
+        [ -d ~/Downloads/arcade-main/web ] && [ -d ~/Downloads/arcade-main/bin ]; then
+        rm -rf ~/web ~/bin
+        mv ~/Downloads/arcade-main/web ~/web
+        mv ~/Downloads/arcade-main/bin ~/bin
+        mkdir -p ~/.config/autostart/
+        cp ~/Downloads/arcade-main/.config/autostart/arcade.desktop ~/.config/autostart/
+        # mv instead of cp, so this script is not overwritten while it runs
+        mv ~/Downloads/arcade-main/arcade-install.sh ~/arcade-install.sh
+    else
+        echo "Download failed. Continue with current version..."
+    fi
+
+    echo "Updating raspberry pi OS..."
+    sudo apt-get -yq update
+    sudo DEBIAN_FRONTEND=noninteractive apt-get -yq -o Dpkg::Options::=--force-confold upgrade
+    sudo apt-get -yq install wget unzip unclutter python3-evdev
 else
     echo "No internet. Continue without update..."
 fi
@@ -36,4 +47,3 @@ rm -rf ~/.cache/mozilla
 
 echo "Starting arcade..."
 ~/bin/arcade-start.sh
-
