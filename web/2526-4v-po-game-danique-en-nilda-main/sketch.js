@@ -248,14 +248,13 @@ var tekenSpeler1 = function() {
 /* ********************************************* */
 
 function preload() {
-  kat = loadImage ('/img/katje-removebg-preview.png');
-  /*gameOverImg = loadImage('/img/GAMEOVER.png');*/
-  GAMEOVERS = loadImage ('/img/GAMEOVER.png');
-  katten = loadImage ('/img/twoCats.jpg');
-  head1 = loadImage ('/img/pixil-frame-0.png');
-  head2 = loadImage ('/img/pixil-frame-0-2.png');
-  obstakel = loadImage ('/img/groteStruik.png');
-  knoppen = loadImage ('/img/uitleg-knoppen.png');
+  kat = loadImage('img/katje-removebg-preview.png');
+  GAMEOVERS = loadImage('img/GAMEOVER.png');
+  katten = loadImage('img/twoCats.jpg');
+  head1 = loadImage('img/pixil-frame-0.png');
+  head2 = loadImage('img/pixil-frame-0-2.png');
+  obstakel = loadImage('img/groteStruik.png');
+  knoppen = loadImage('img/uitleg-knoppen.png');
 }
 
 /**
