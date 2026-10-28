@@ -3,5 +3,10 @@
 echo "Stopping webbrowser if it was running"
 pkill -KILL chromium
 
+export DISPLAY=:0
+xset s off
+xset -dpms
+xset s noblank
+
 echo "Starting webbrowser"
 chromium-browser --noerrdialogs --disable-infobars --display=:0 --window-position=0,0 --incognito --password-store=basic --kiosk http://localhost:8000/
